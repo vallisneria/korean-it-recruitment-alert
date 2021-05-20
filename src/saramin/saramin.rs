@@ -6,6 +6,7 @@ pub struct Saramin {
     education: String,
     employment_type: String,
     work_place: String,
+    salary: String,
     deadline: String,
     link: String,
 }
@@ -13,13 +14,24 @@ pub struct Saramin {
 impl ToString for Saramin {
     fn to_string(&self) -> String {
         format!(
-            "{title}\n🏢 {company_name}\n\n👨‍💼 {career}\n🏫 {education}\n👨‍💻 {employment_type}\n🗺️ {work_place}\n🕑 {deadline}\n\n{link}",
+            r"{title}
+🏢 {company_name}
+
+👨‍💼 {career}
+🏫 {education}
+👨‍💻 {employment_type}
+🗺️ {work_place}
+💰 {salary}
+🕑 {deadline}
+
+{link}",
             title = self.title,
             company_name = self.company_name,
             career = self.career,
             education = self.education,
             employment_type = self.employment_type,
             work_place = self.work_place,
+            salary = self.salary,
             deadline = self.deadline,
             link = self.link
         )
@@ -35,6 +47,7 @@ impl Saramin {
         education: String,
         employment_type: String,
         work_place: String,
+        salary: String,
         deadline: String,
         link: String,
     ) -> Saramin {
@@ -46,6 +59,7 @@ impl Saramin {
             education,
             employment_type,
             work_place,
+            salary,
             deadline,
             link,
         }

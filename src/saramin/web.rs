@@ -24,6 +24,7 @@ pub fn get_job_list(latest_id: u32) -> Result<Vec<Saramin>, Box<dyn std::error::
             get_education(node),
             get_employment_type(node),
             get_work_place(node),
+            get_salary(node),
             get_deadline(node),
             get_link(node),
         );
@@ -80,6 +81,13 @@ fn get_employment_type(node: Node) -> String {
 fn get_work_place(node: Node) -> String {
     match node.find(Class("work_place")).next() {
         Some(work_place) => work_place.text(),
+        _ => String::new(),
+    }
+}
+
+fn get_salary(node: Node) -> String {
+    match node.find(Class("salary")).next() {
+        Some(salary) => salary.text(),
         _ => String::new(),
     }
 }
