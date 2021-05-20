@@ -63,43 +63,29 @@ fn get_title(node: Node) -> String {
 }
 
 fn get_career(node: Node) -> String {
-    node.find(Class("career"))
-        .next()
-        .unwrap()
-        .text()
-        .to_string()
+    node.find(Class("career")).next().unwrap().text()
 }
 
 fn get_education(node: Node) -> String {
-    node.find(Class("education"))
-        .next()
-        .unwrap()
-        .text()
-        .to_string()
+    node.find(Class("education")).next().unwrap().text()
 }
 
 fn get_employment_type(node: Node) -> String {
-    node.find(Class("employment_type"))
-        .next()
-        .unwrap()
-        .text()
-        .to_string()
+    match node.find(Class("employment_type")).next() {
+        Some(employment_type) => employment_type.text(),
+        _ => String::new(),
+    }
 }
 
 fn get_work_place(node: Node) -> String {
-    node.find(Class("work_place"))
-        .next()
-        .unwrap()
-        .text()
-        .to_string()
+    match node.find(Class("work_place")).next() {
+        Some(work_place) => work_place.text(),
+        _ => String::new(),
+    }
 }
 
 fn get_deadline(node: Node) -> String {
-    node.find(Class("deadlines"))
-        .next()
-        .unwrap()
-        .text()
-        .to_string()
+    node.find(Class("deadlines")).next().unwrap().text()
 }
 
 fn get_link(node: Node) -> String {
