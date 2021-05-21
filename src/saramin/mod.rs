@@ -1,2 +1,2 @@
-pub mod saramin;
+pub mod data;
 pub mod web;

@@ -1,4 +1,4 @@
-use crate::saramin::saramin::Saramin;
+use crate::saramin::data::Saramin;
 use select::document::Document;
 use select::node::Node;
 use select::predicate::{Class, Name, Predicate};
