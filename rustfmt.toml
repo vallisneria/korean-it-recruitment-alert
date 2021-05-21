@@ -1,0 +1,13 @@
+# See https://github.com/rust-lang/rustfmt
+
+# Control the layout of arguments in a function
+fn_args_layout = "Compressed"
+
+# Unix or Windows line endings
+newline_style = "Unix"
+
+# Use field initialize shorthand if possible.
+use_field_init_shorthand = true
+
+# Replace uses of the try! macro by the ? shorthand
+use_try_shorthand = true

@@ -40,15 +40,8 @@ impl ToString for Saramin {
 
 impl Saramin {
     pub fn new(
-        id: u32,
-        company_name: String,
-        title: String,
-        career: String,
-        education: String,
-        employment_type: String,
-        work_place: String,
-        salary: String,
-        deadline: String,
+        id: u32, company_name: String, title: String, career: String, education: String,
+        employment_type: String, work_place: String, salary: String, deadline: String,
         link: String,
     ) -> Saramin {
         Saramin {
