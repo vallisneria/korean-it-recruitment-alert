@@ -1,8 +1,8 @@
+use saramin::web::get_job_list as get_saramin;
 use std::thread;
 use std::time::Duration;
 
 mod saramin;
-use saramin::web::get_job_list as get_saramin;
 
 fn main() {
     loop {
