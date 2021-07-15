@@ -22,7 +22,7 @@ fn main() {
             title = &saramin_list[0].title
         );
 
-        // 작업이 모두 끝나면 2분동안 대기
-        thread::sleep(Duration::from_secs(120));
+        // 작업이 모두 끝나면 30초동안 대기
+        thread::sleep(Duration::from_secs(30));
     }
 }
