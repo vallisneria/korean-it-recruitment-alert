@@ -1,5 +1,3 @@
-type Result<T> = Result<T, Box<dyn std::error::Error>>;
-
 fn main() {
     // init
 
@@ -10,7 +8,7 @@ fn main() {
     }
 }
 
-fn saramin() -> Result<()> {
+fn saramin() -> Result<(), Box<dyn std::error::Error>> {
     // 데이터 가져오기
 
     // 데이처 처리
@@ -21,7 +19,7 @@ fn saramin() -> Result<()> {
     Ok(())
 }
 
-fn jobkorea() -> Result<()> {
+fn jobkorea() -> Result<(), Box<dyn std::error::Error>> {
     // 데이터 가져오기
 
     // 데이터 처리
@@ -32,7 +30,7 @@ fn jobkorea() -> Result<()> {
     Ok(())
 }
 
-fn incruit() -> Result<()> {
+fn incruit() -> Result<(), Box<dyn std::error::Error>> {
     // 데이터 가져오기
 
     // 데이터 처리
