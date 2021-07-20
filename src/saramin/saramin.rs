@@ -30,7 +30,7 @@ pub struct Saramin {
 impl ToString for Saramin {
     fn to_string(&self) -> String {
         format!(
-              r"{title}
+            r"{title}
 🏢 {company_name}
 
 👨‍💼 {career}
@@ -41,9 +41,9 @@ impl ToString for Saramin {
 🕑 {deadline}
 
 {link}",
-            title=self.title,
-            company_name=self.company_name,
-            career=self.career.unwrap_or("")
+            title = self.title,
+            company_name = self.company_name,
+            career = self.career.unwrap_or("")
         )
     }
 }
