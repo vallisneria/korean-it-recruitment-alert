@@ -20,6 +20,9 @@ pub struct Saramin {
     // 근로형태
     employment_type: Option<String>,
 
+    // 근무지
+    work_place: Option<String>,
+
     // 임금
     salary: Option<String>,
 
@@ -29,8 +32,8 @@ pub struct Saramin {
 
 impl ToString for Saramin {
     fn to_string(&self) -> String {
-        format!(
-            r"{title}
+        let mut result = format!(
+r"{title}
 🏢 {company_name}
 
 👨‍💼 {career}
@@ -40,10 +43,17 @@ impl ToString for Saramin {
 💰 {salary}
 🕑 {deadline}
 
-{link}",
-            title = self.title,
-            company_name = self.company_name,
-            career = self.career.unwrap_or("")
+{link}
+",
+            title = &self.title,
+            company_name = &self.company_name,
+            career = &self.career,
+            education = &self.education,
+            employment_type = &self.employment_type.unwrap_or(String::from("-"))),
+            work_place = &self.work_place.unwrap_or(String::from("-")),
+            salary = &self.salary.unwrap_or(String::from("-")),
+            deadline = &self.deadline,
+            link = &self.link
         )
     }
 }
