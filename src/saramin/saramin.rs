@@ -3,28 +3,28 @@ pub struct Saramin {
     id: u32,
 
     // 회사명
-    company_name: &str,
+    company_name: String,
 
     // 공고 제목
-    title: &str,
+    title: String,
 
     // 링크
-    link: &str,
+    link: String,
 
     // 경력
-    career: Option<&str>,
+    career: String,
 
     // 학력
-    education: Option<&str>,
+    education: String,
 
     // 근로형태
-    employment_type: Option<&str>,
+    employment_type: Option<String>,
 
     // 임금
-    salary: Option<&str>,
+    salary: Option<String>,
 
     // 모집기한
-    deadline: Option<&str>,
+    deadline: Option<String>,
 }
 
 impl ToString for Saramin {
