@@ -59,7 +59,7 @@ impl ToString for Saramin {
 }
 
 impl Saramin {
-    fn new(
+    pub fn new(
         id: u32, title: String, company_name: String, career: String, education: String,
         employment_type: Option<String>, work_place: Option<String>, salary: Option<String>,
         deadline: String, link: String,
