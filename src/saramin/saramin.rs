@@ -1,6 +1,6 @@
 pub struct Saramin {
     // 공고 ID
-    id: u32,
+    pub id: u32,
 
     // 회사명
     company_name: String,
