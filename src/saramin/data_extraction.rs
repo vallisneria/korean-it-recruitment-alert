@@ -64,25 +64,16 @@ fn get_education(node: Node) -> String {
     node.find(Class("education")).next().unwrap().text()
 }
 
-fn get_employment_type(node: Node) -> Option<String> {
-    match node.find(Class("employment_type")).next() {
-        Some(employment_type) => Some(employment_type.text()),
-        _ => None,
-    }
+fn get_employment_type(node: Node) -> String {
+    node.find(Class("employment_type")).next().unwrap().text()
 }
 
-fn get_work_place(node: Node) -> Option<String> {
-    match node.find(Class("work_place")).next() {
-        Some(work_place) => Some(work_place.text()),
-        _ => None,
-    }
+fn get_work_place(node: Node) -> String {
+    node.find(Class("work_place")).next().unwrap().text()
 }
 
-fn get_salary(node: Node) -> Option<String> {
-    match node.find(Class("salary")).next() {
-        Some(salary) => Some(salary.text()),
-        _ => None,
-    }
+fn get_salary(node: Node) -> String {
+    node.find(Class("salary")).next().unwrap().text()
 }
 
 fn get_deadline(node: Node) -> String {

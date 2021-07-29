@@ -18,13 +18,13 @@ pub struct Saramin {
     education: String,
 
     // 근로형태
-    employment_type: Option<String>,
+    employment_type: String,
 
     // 근무지
-    work_place: Option<String>,
+    work_place: String,
 
     // 임금
-    salary: Option<String>,
+    salary: String,
 
     // 모집기한
     deadline: String,
@@ -45,15 +45,15 @@ impl ToString for Saramin {
 
 {link}
 ",
-            title = self.title,
-            company_name = self.company_name,
-            career = self.career,
-            education = self.education,
-            employment_type = self.employment_type.as_ref().unwrap_or(&String::from("-")),
-            work_place = self.work_place.as_ref().unwrap_or(&String::from("-")),
-            salary = self.salary.as_ref().unwrap_or(&String::from("-")),
-            deadline = self.deadline,
-            link = self.link
+            title = &self.title,
+            company_name = &self.company_name,
+            career = &self.career,
+            education = &self.education,
+            employment_type = &self.employment_type,
+            work_place = &self.work_place,
+            salary = &self.salary,
+            deadline = &self.deadline,
+            link = &self.link
         )
     }
 }
@@ -61,8 +61,8 @@ impl ToString for Saramin {
 impl Saramin {
     pub fn new(
         id: u32, title: String, company_name: String, career: String, education: String,
-        employment_type: Option<String>, work_place: Option<String>, salary: Option<String>,
-        deadline: String, link: String,
+        employment_type: String, work_place: String, salary: String, deadline: String,
+        link: String,
     ) -> Saramin {
         Saramin {
             id,
