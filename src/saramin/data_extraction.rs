@@ -90,3 +90,16 @@ fn get_link(node: Node) -> String {
 
     format!("https://saramin.co.kr{}", path)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn data_extracting_test() {
+        use select::document::Document;
+        let html = include_str!("saramin_job_list_for_test.html");
+        let doc = Document::from_read(html.as_bytes()).unwrap();
+
+        data_extract(doc);
+    }
+}

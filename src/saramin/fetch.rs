@@ -9,3 +9,15 @@ pub async fn fetch(http_client: &reqwest::Client) -> Result<Document, Box<dyn st
 
     Ok(document)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[tokio::test]
+    async fn it_runs() {
+        use reqwest::Client;
+
+        let client = Client::new();
+        fetch(&client).await.unwrap();
+    }
+}
