@@ -3,7 +3,7 @@ use select::document::Document;
 use select::node::Node;
 use select::predicate::{Class, Name, Predicate};
 
-pub fn parse(document: Document) -> Vec<Saramin> {
+pub fn data_extract(document: Document) -> Vec<Saramin> {
     let mut result: Vec<Saramin> = Vec::new();
 
     for node in document.find(Class("list_item")) {

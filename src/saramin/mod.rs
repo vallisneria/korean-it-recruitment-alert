@@ -1,3 +1,3 @@
+pub mod data_extraction;
 pub mod fetch;
-pub mod parse;
 pub mod saramin;
