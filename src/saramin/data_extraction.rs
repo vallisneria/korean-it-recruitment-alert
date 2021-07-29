@@ -73,7 +73,10 @@ fn get_work_place(node: Node) -> String {
 }
 
 fn get_salary(node: Node) -> String {
-    node.find(Class("salary")).next().unwrap().text()
+    match node.find(Class("salary")).next() {
+        Some(item) => item.text(),
+        None => String::new(),
+    }
 }
 
 fn get_deadline(node: Node) -> String {
