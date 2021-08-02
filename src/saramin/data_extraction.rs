@@ -56,31 +56,46 @@ fn get_title(node: Node) -> String {
         .unwrap()
 }
 
-fn get_career(node: Node) -> String {
-    node.find(Class("career")).next().unwrap().text()
-}
-
-fn get_education(node: Node) -> String {
-    node.find(Class("education")).next().unwrap().text()
-}
-
-fn get_employment_type(node: Node) -> String {
-    node.find(Class("employment_type")).next().unwrap().text()
-}
-
-fn get_work_place(node: Node) -> String {
-    node.find(Class("work_place")).next().unwrap().text()
-}
-
-fn get_salary(node: Node) -> String {
-    match node.find(Class("salary")).next() {
-        Some(item) => item.text(),
-        None => String::new(),
+fn get_career(node: Node) -> Option<String> {
+    match node.find(Class("career")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
     }
 }
 
-fn get_deadline(node: Node) -> String {
-    node.find(Class("deadlines")).next().unwrap().text()
+fn get_education(node: Node) -> Option<String> {
+    match node.find(Class("education")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
+    }
+}
+
+fn get_employment_type(node: Node) -> Option<String> {
+    match node.find(Class("employment_type")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
+    }
+}
+
+fn get_work_place(node: Node) -> Option<String> {
+    match node.find(Class("work_place")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
+    }
+}
+
+fn get_salary(node: Node) -> Option<String> {
+    match node.find(Class("salary")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
+    }
+}
+
+fn get_deadline(node: Node) -> Option<String> {
+    match node.find(Class("deadlines")).next() {
+        Some(item) => Some(item.text()),
+        None => None,
+    }
 }
 
 fn get_link(node: Node) -> String {
