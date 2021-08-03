@@ -1,4 +1,5 @@
 mod jobkorea;
+mod posting;
 mod saramin;
 
 use reqwest;
