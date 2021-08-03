@@ -8,12 +8,13 @@ use tokio::time::{sleep, Duration};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    let mstdn = posting::mastodon::Mastodon::new();
     let http_client = reqwest::Client::new();
     let mut latest_saramin_id = saramin::init(&http_client).await?;
 
     loop {
         sleep(Duration::from_millis(60_000)).await;
 
-        latest_saramin_id = saramin::cycle(latest_saramin_id, &http_client).await?;
+        latest_saramin_id = saramin::cycle(latest_saramin_id, &http_client, &mstdn).await?;
     }
 }

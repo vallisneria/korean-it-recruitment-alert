@@ -4,7 +4,7 @@ pub struct Mastodon {
 }
 
 impl Mastodon {
-    fn new(instance_url: String, bearer_token: String) -> Mastodon {
+    pub fn new(instance_url: String, bearer_token: String) -> Mastodon {
         Mastodon {
             instance_url,
             bearer_token,
@@ -13,7 +13,7 @@ impl Mastodon {
 }
 
 impl Mastodon {
-    async fn posting<T>(
+    pub async fn posting<T>(
         &self, http_client: &reqwest::Client, msg: &T,
     ) -> Result<(), Box<dyn std::error::Error>>
     where

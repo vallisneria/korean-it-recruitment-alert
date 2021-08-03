@@ -45,7 +45,7 @@ impl ToString for Saramin {
 💰 {salary}
 🕑 {deadline}
 
-{link}
+🔗 {link}
             ",
             title = &self.title,
             company_name = &self.company_name,
