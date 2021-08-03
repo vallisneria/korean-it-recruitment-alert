@@ -3,7 +3,7 @@ use select::document::Document;
 use select::node::Node;
 use select::predicate::{Class, Name, Predicate};
 
-pub fn data_extract(document: Document) -> Vec<Saramin> {
+pub fn data_extract(document: &Document) -> Vec<Saramin> {
     let mut result: Vec<Saramin> = Vec::new();
 
     for node in document.find(Class("list_item")) {
@@ -118,6 +118,6 @@ mod tests {
         let html = include_str!("saramin_job_list_for_test.html");
         let doc = Document::from_read(html.as_bytes()).unwrap();
 
-        data_extract(doc);
+        data_extract(&doc);
     }
 }

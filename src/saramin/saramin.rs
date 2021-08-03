@@ -3,13 +3,13 @@ pub struct Saramin {
     pub id: u32,
 
     // 회사명
-    company_name: String,
+    pub company_name: String,
 
     // 공고 제목
-    title: String,
+    pub title: String,
 
     // 링크
-    link: String,
+    pub link: String,
 
     // 경력
     career: Option<String>,
@@ -36,16 +36,16 @@ impl ToString for Saramin {
 
         format!(
             r"{title}
-            🏢 {company_name}
+🏢 {company_name}
 
-            👨‍💼 {career}
-            🏫 {education}
-            👨‍💻 {employment_type}
-            🗺️ {work_place}
-            💰 {salary}
-            🕑 {deadline}
+👨‍💼 {career}
+🏫 {education}
+👨‍💻 {employment_type}
+🗺️ {work_place}
+💰 {salary}
+🕑 {deadline}
 
-            {link}
+{link}
             ",
             title = &self.title,
             company_name = &self.company_name,
