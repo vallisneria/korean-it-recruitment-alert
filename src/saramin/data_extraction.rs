@@ -5,8 +5,9 @@ use select::predicate::{Class, Name, Predicate};
 
 pub fn data_extract(document: &Document) -> Vec<Saramin> {
     let mut result: Vec<Saramin> = Vec::new();
+    let nodes = document.find(Class("common_recruilt_list").descendant(Class("list_item")));
 
-    for node in document.find(Class("list_item")) {
+    for node in nodes {
         let data = Saramin::new(
             get_id(node),
             get_title(node),
@@ -93,7 +94,7 @@ fn get_salary(node: Node) -> Option<String> {
 
 fn get_deadline(node: Node) -> Option<String> {
     match node.find(Class("deadlines")).next() {
-        Some(item) => Some(item.text()),
+        Some(item) => Some(item.find(Name("span").not()).next()?.text()),
         None => None,
     }
 }
