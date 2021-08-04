@@ -14,7 +14,7 @@ pub async fn init(http_client: &reqwest::Client) -> Result<u32, Box<dyn Error>> 
 }
 
 /// 채용 공고를 가져오고 업로드함
-/// 가장 최근의 채용 공고를 반환한다.
+/// 가장 최근의 채용 공고 id를 반환한다.
 pub async fn cycle(
     latest_id: u32, http_client: &reqwest::Client, mstdn: &Mastodon,
 ) -> Result<u32, Box<dyn Error>> {
@@ -28,7 +28,6 @@ pub async fn cycle(
             break;
         }
 
-        println!("{}", &i.to_string());
         mstdn.posting(&http_client, &i.to_string()).await?;
     }
 
