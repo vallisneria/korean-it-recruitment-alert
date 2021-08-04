@@ -3,12 +3,16 @@ mod posting;
 mod saramin;
 
 use reqwest;
+use std::env;
 use std::error::Error;
 use tokio::time::{sleep, Duration};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let mstdn = posting::mastodon::Mastodon::new();
+    let mstdn = posting::mastodon::Mastodon::new(
+        env::var("MASTODON_URL")?,
+        env::var("MASTODON_BEARER_TOKEN")?,
+    );
     let http_client = reqwest::Client::new();
     let mut latest_saramin_id = saramin::init(&http_client).await?;
 
