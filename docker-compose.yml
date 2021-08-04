@@ -1,5 +1,8 @@
 version: '3'
 
 image: 
-  service:
+  korean-it-recruitment-alert:
     build: .
+    environment:
+      - MASTODON_URL=
+      - MASTODON_BEARER_TOKEN=
