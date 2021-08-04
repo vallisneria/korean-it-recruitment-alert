@@ -13,7 +13,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut latest_saramin_id = saramin::init(&http_client).await?;
 
     loop {
-        sleep(Duration::from_millis(60_000)).await;
+        println!("[log] latest_saramin_id={}", latest_saramin_id);
+        sleep(Duration::from_millis(30_000)).await;
 
         latest_saramin_id = saramin::cycle(latest_saramin_id, &http_client, &mstdn).await?;
     }
