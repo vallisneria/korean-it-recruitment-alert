@@ -1,3 +1,5 @@
+use tokio::time::{sleep, Duration};
+
 pub struct Mastodon {
     instance_url: String,
     bearer_token: String,
@@ -31,6 +33,7 @@ impl Mastodon {
             .send()
             .await?;
 
+        sleep(Duration::from_millis(5_000)).await;
         Ok(())
     }
 }
