@@ -1,9 +1,9 @@
 FROM rust:1.52 as builder
-WORKDIR /opt
+WORKDIR /build
 COPY . .
-RUN cargo install --path .
+RUN cargo build --release
 
 FROM alpine:latest
 WORKDIR /opt
-COPY --from=builder /usr/local/cargo/bin/korean-it-recruitment-alert /usr/local/bin/korean-it-recruitment-alert
+COPY --from=builder /build/target/release/korean-it-recruitment-alert /opt/korean-it-recruitment-alert
 CMD [ "korean-it-recruitment-alert" ]
