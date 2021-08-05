@@ -1,1 +1,5 @@
-*test*.html linguist-vendored
+# 줄바꿈 관련 설정
+*               text=auto eol=lf
+
+# Github 언어 통계 관련 설정
+*test*.html     linguist-vendored
