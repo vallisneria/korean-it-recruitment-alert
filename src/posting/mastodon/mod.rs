@@ -14,17 +14,23 @@ impl Mastodon {
     }
 }
 
+pub trait MastodonUpload {
+    fn title(&self) -> String;
+    fn statuses(&self) -> String;
+}
+
 impl Mastodon {
     pub async fn posting<T>(
         &self, http_client: &reqwest::Client, msg: &T,
     ) -> Result<(), Box<dyn std::error::Error>>
     where
-        T: ToString,
+        T: MastodonUpload,
     {
         sleep(Duration::from_millis(5_000)).await;
 
         let status = [
-            ("status", msg.to_string()),
+            ("spoiler_text", msg.title()),
+            ("status", msg.statuses()),
             ("visibility", "unlisted".to_string()),
         ];
 

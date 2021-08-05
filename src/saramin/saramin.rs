@@ -1,3 +1,5 @@
+use super::super::posting::mastodon::MastodonUpload;
+
 pub struct Saramin {
     // 공고 ID
     pub id: u32,
@@ -30,14 +32,16 @@ pub struct Saramin {
     deadline: Option<String>,
 }
 
-impl ToString for Saramin {
-    fn to_string(&self) -> String {
+impl MastodonUpload for Saramin {
+    fn title(&self) -> String {
+        self.title.clone()
+    }
+
+    fn statuses(&self) -> String {
         let is_none = String::from("-");
 
         format!(
-            r"{title}
-🏢 {company_name}
-
+            r"🏢 {company_name}
 👨‍💼 {career}
 🏫 {education}
 👨‍💻 {employment_type}
@@ -46,7 +50,6 @@ impl ToString for Saramin {
 🕑 {deadline}
 
 🔗 {link}",
-            title = &self.title,
             company_name = &self.company_name,
             career = &self.career.as_ref().unwrap_or(&is_none),
             education = &self.education.as_ref().unwrap_or(&is_none),

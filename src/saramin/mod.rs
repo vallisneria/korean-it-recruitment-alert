@@ -28,7 +28,7 @@ pub async fn cycle(
             break;
         }
 
-        mstdn.posting(&http_client, &i.to_string()).await?;
+        mstdn.posting(&http_client, i).await?;
     }
 
     Ok(data[0].id)
