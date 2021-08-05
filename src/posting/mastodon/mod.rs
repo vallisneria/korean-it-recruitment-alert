@@ -21,6 +21,8 @@ impl Mastodon {
     where
         T: ToString,
     {
+        sleep(Duration::from_millis(5_000)).await;
+
         let status = [
             ("status", msg.to_string()),
             ("visibility", "unlisted".to_string()),
@@ -33,7 +35,6 @@ impl Mastodon {
             .send()
             .await?;
 
-        sleep(Duration::from_millis(5_000)).await;
         Ok(())
     }
 }
