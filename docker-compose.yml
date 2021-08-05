@@ -3,6 +3,4 @@ version: '3'
 image: 
   korean-it-recruitment-alert:
     build: .
-    environment:
-      - MASTODON_URL=
-      - MASTODON_BEARER_TOKEN=
+    env_file: .env
