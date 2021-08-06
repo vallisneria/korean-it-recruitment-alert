@@ -28,10 +28,10 @@ pub fn data_extract(document: &Document) -> Vec<Saramin> {
 }
 
 fn get_id(node: Node) -> u32 {
-    node.find(Class("btn_scrap"))
+    node.find(Class("idx_chk"))
         .next()
         .unwrap()
-        .attr("rec_idx")
+        .attr("value")
         .unwrap()
         .parse()
         .unwrap()
