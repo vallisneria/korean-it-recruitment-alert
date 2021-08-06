@@ -24,11 +24,12 @@ pub async fn cycle(
 
     // 가져온 공고를 처리함
     for i in data.iter() {
-        if i.id == latest_id {
+        if i.id > latest_id {
+            println!("[{}] {}", i.id, i.title);
+            mstdn.posting(&http_client, i).await?;
+        } else {
             break;
         }
-
-        mstdn.posting(&http_client, i).await?;
     }
 
     Ok(data[0].id)
