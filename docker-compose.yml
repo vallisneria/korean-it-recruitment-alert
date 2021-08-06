@@ -2,5 +2,5 @@ version: "3"
 
 services: 
   korean-it-recruitment-alert:
-    build: .
+    image: ghcr.io/vallisneria/korean-it-recruitment-alert:latest
     env_file: .env
