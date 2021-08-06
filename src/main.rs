@@ -9,6 +9,7 @@ use tokio::time::{sleep, Duration};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    let mstdn_enable = env::var("MASTODON_ENABLE").is_ok();
     let mstdn = posting::mastodon::Mastodon::new(
         env::var("MASTODON_URL")?,
         env::var("MASTODON_BEARER_TOKEN")?,
