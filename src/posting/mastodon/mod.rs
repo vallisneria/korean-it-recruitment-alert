@@ -15,8 +15,8 @@ impl Mastodon {
 }
 
 pub trait MastodonUpload {
-    fn title(&self) -> String;
-    fn statuses(&self) -> String;
+    fn spoiler_text(&self) -> String;
+    fn status(&self) -> String;
 }
 
 impl Mastodon {
@@ -26,11 +26,11 @@ impl Mastodon {
     where
         T: MastodonUpload,
     {
-        sleep(Duration::from_millis(5_000)).await;
+        println!("[log] UPLOAD MASTODON {}", msg.spoiler_text());
 
         let status = [
-            ("spoiler_text", msg.title()),
-            ("status", msg.statuses()),
+            ("spoiler_text", msg.spoiler_text()),
+            ("status", msg.status()),
             ("visibility", "unlisted".to_string()),
         ];
 

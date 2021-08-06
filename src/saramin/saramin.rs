@@ -33,11 +33,11 @@ pub struct Saramin {
 }
 
 impl MastodonUpload for Saramin {
-    fn title(&self) -> String {
+    fn spoiler_text(&self) -> String {
         self.title.clone()
     }
 
-    fn statuses(&self) -> String {
+    fn status(&self) -> String {
         let is_none = String::from("-");
 
         format!(
