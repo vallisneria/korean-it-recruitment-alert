@@ -19,7 +19,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     loop {
         println!("[log] latest_saramin_id={}", latest_saramin_id);
-        sleep(Duration::from_millis(30_000)).await;
+        sleep(Duration::from_millis(120_000)).await;
 
         latest_saramin_id = saramin::cycle(latest_saramin_id, &http_client, &mstdn).await?;
     }
