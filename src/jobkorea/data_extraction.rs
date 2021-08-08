@@ -80,3 +80,17 @@ fn get_link(node: Node) -> String {
 
     format!("https://www.jobkorea.co.kr{}", link)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::super::fetch::fetch;
+    use super::*;
+    use reqwest::Client;
+
+    #[tokio::test]
+    async fn data_extract_test() {
+        let http_client = Client::new();
+        let doc = fetch(&http_client).await.unwrap();
+        data_extract(&doc);
+    }
+}
