@@ -114,7 +114,7 @@ fn get_link(node: Node) -> String {
 mod tests {
     use super::*;
     #[test]
-    fn data_extracting_test() {
+    fn data_extract_test() {
         use select::document::Document;
         let html = include_str!("saramin_job_list_for_test.html");
         let doc = Document::from_read(html.as_bytes()).unwrap();
