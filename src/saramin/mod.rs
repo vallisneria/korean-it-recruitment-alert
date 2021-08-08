@@ -21,6 +21,7 @@ pub async fn cycle(
     // 웹 사이트에서 목록을 가져옴
     let saramin_document = fetch::fetch(&http_client).await?;
     let data = data_extraction::data_extract(&saramin_document);
+    let fetch_latest_id = data[0].id;
 
     // 가져온 공고를 처리함
     for i in data.iter() {
@@ -32,5 +33,9 @@ pub async fn cycle(
         }
     }
 
-    Ok(data[0].id)
+    if fetch_latest_id > latest_id {
+        Ok(fetch_latest_id)
+    } else {
+        Ok(latest_id)
+    }
 }
