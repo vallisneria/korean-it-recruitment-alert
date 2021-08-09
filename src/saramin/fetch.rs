@@ -12,7 +12,6 @@ pub async fn fetch(http_client: &reqwest::Client) -> Result<Document, Box<dyn st
         "&sort=RD"
     );
 
-    println!("[log] REQUEST {}", &SARAMIN_URL);
     let response = http_client.get(SARAMIN_URL).send().await?.text().await?;
     let document = Document::from_read(response.as_bytes())?;
 
