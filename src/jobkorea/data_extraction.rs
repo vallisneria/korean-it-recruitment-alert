@@ -5,7 +5,7 @@ use select::predicate::{Class, Name, Predicate};
 
 pub fn data_extract(document: &Document) -> Vec<JobKorea> {
     let mut result: Vec<JobKorea> = Vec::new();
-    let nodes = document.find(Name("tr").and(Class("devLoopArea")));
+    let nodes = document.find(Name("tr").and(Class("devloopArea")));
 
     for node in nodes {
         let data = JobKorea::new(
@@ -24,7 +24,7 @@ pub fn data_extract(document: &Document) -> Vec<JobKorea> {
 }
 
 fn get_id(node: Node) -> u32 {
-    node.find(Name("button").and(Class("lstbtn")))
+    node.find(Name("button").and(Class("lstBtn")))
         .next()
         .unwrap()
         .attr("data-gno")
@@ -86,11 +86,23 @@ mod tests {
     use super::super::fetch::fetch;
     use super::*;
     use reqwest::Client;
+    use select::document::Document;
+
+    #[test]
+    fn data_extract_test() {
+        let html = include_str!("jobkorea_job_list_for_test.html");
+        let doc = Document::from(html);
+        let data = data_extract(&doc);
+
+        assert_ne!(data.len(), 0);
+    }
 
     #[tokio::test]
-    async fn data_extract_test() {
+    async fn fetch_and_extract() {
         let http_client = Client::new();
         let doc = fetch(&http_client).await.unwrap();
-        data_extract(&doc);
+        let data = data_extract(&doc);
+
+        assert_ne!(data.len(), 0);
     }
 }
