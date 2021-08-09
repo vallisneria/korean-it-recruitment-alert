@@ -1,0 +1,2682 @@
+<div class="tplJobListWrap devTplTabBx">
+    <h2 class="bn_hd_2 blind">채용공고 리스트</h2>
+    <input type="hidden" id="hdnGICnt" value=" 10,829" />
+    <div class="tplTabBx jobListTab">
+        <ul class="tplTab clear" id="anchorGICnt_1">
+            <li class="on" data-tab-index="0"><button type="button"><span data-text="전체">전체
+                        <em>(10,829건)</em></span></button></li>
+            <li data-tab-index="1"><button type="button"><span data-text="대기업">대기업</span></button></li>
+            <li data-tab-index="2"><button type="button"><span data-text="중견·중소">중견·중소</span></button></li>
+            <li data-tab-index="3"><button type="button"><span data-text="공기업·공사">공기업·공사</span></button></li>
+            <li data-tab-index="4"><button type="button"><span data-text="외국계">외국계</span></button></li>
+        </ul>
+    </div>
+
+
+
+    <div class="tplJobListFunc clear">
+        <div class="inp_imtWrap">
+            <span class="tplChkCirc tplChkCirc_1 devTplChkBx">
+                <input type="checkbox" name="jobChkView" value="1" id="lb_imtApply">
+                <label for="lb_imtApply" class="tplBtn bxIpt">즉시지원만 보기</label>
+            </span>
+        </div>
+        <div class="inp_imtWrap">
+            <span class="tplChkCirc tplChkCirc_1 devTplChkBx">
+                <input type="checkbox" name="jobChkView" value="2" id="lb_imtFullTime">
+                <label for="lb_imtFullTime" class="tplBtn bxIpt">정규직만 보기</label>
+            </span>
+        </div>
+        <div class="inp_imtWrap">
+            <span class="tplChkCirc tplChkCirc_1 devTplChkBx">
+                <input type="checkbox" name="jobChkView" value="3" id="lb_imtConfirm">
+                <label for="lb_imtConfirm" class="tplBtn bxIpt">확인한 공고 제외</label>
+            </span>
+        </div>
+
+        <div class="tplJobManBtn" id="toolGI">
+            <div class="tplSltBx tplGiSlt devTplSltBx">
+                <div class="setRcmdTip clearfix" tabindex="0" style="display:none;">
+                    <button type="button" id="dev-btn-recommanded-order" class="setRcmdSet"><em class="under">추천순
+                            정렬</em>을 이용해보세요<em class="pnt">!</em></button>
+                    <button type="button" id="dev-btn-recommanded-close" class="setRcmdClose">닫기</button>
+                </div>
+                <label for="sortTab">추천순</label>
+                <select name="orderTab" id="orderTab" class="tplSlt" title="공고 정렬순 선택">
+                    <option value="2">등록일순</option>
+                    <option value="3">최신업데이트순</option>
+                    <option value="4">마감일순</option>
+                    <option value="5">경력순</option>
+                    <option value="7">학력순</option>
+                    <option value="20" selected=selected>추천순</option>
+                </select>
+            </div>
+
+            <div class="tplSltBx tplGiSlt devTplSltBx">
+                <label for="psTab">40개씩</label>
+                <select name="psTab" id="pstab" class="tplSlt" title="목록 노출 수 선택">
+                    <option value="10">10개씩</option>
+                    <option value="20">20개씩</option>
+                    <option value="30">30개씩</option>
+                    <option value="40" selected=selected>40개씩</option>
+                    <option value="50">50개씩</option>
+                </select>
+            </div>
+
+            <div class="exceptSec">
+                <div class="tplSltBx tplGiSlt devTplSltBx">
+                    <label for="sortTab">포함단어</label>
+                    <select name="sortTab" id="sortTab" class="tplSlt" title="공고 정렬순 선택">
+                        <option value="1" selected="">포함단어</option>
+                        <option value="2">제외단어</option>
+                    </select>
+                </div>
+                <div class="exceptWord">
+                    <input type="text" id="lb_exceptWord" name="includeText">
+                    <label for="lb_exceptWord" class="dev-ph-label">기업명, 공고제목 등 검색</label>
+                    <button type="button" id="dev-gi-search"><span class="blind">검색</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tplJobListFunc clear" style="display:none;">
+        <button type="button" class="tplBtn tplBtn_2 tplBtnApply"><span>지원하기</span></button>
+        <button type="button" class="tplBtn tplBtn_2 tplBtnScr"><span>스크랩</span></button>
+        <button type="button" class="tplBtn tplBtn_2 tplBtnFav"><span>관심기업</span></button>
+    </div>
+    <div class="lySmMoreArea jkSidebarArea">
+
+    </div>
+
+    <div class="tplList tplJobList">
+        <table summary="전체 채용정보 목록으로 회사명, 채용제목, 미리보기, 등록일·마감일로 구성되어 있습니다.">
+            <caption><span class="blind">전체 채용정보 목록</span></caption>
+            <colgroup>
+                <col width="50px">
+                <col width="158px">
+                <col width="*">
+                <col width="82px">
+                <col width="120px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">행 선택</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">채용제목</th>
+                    <th scope="col">미리보기</th>
+                    <th scope="col">등록일·마감일</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35594988|38867241|compuzon|C|SL||11136">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35594988" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/compuzon" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜컴퓨존</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-11136"
+                            data-mem-sys="11136"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+
+                            <span class="tplIcn tplIcnView" title="867위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35594988?rPageCode=SL" class="link normalLog"
+                                    title="PHP웹개발자/ 웹/모바일디자인 채용" data-clickctgrcode="B02" target="_blank">PHP웹개발자/
+                                    웹/모바일디자인 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38867241 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 용산구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell">3,200만원 이상</span>
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">UI&#183;UX디자인, 전자제품대리점, 상품기획, 소셜커머스, 쇼핑몰, 오픈마켓, 전자상거래, B2B, B2C, 유지보수, 컴퓨터,
+                                하드웨어, AS, DB2, DBA, MySQL, SQL, 웹기획, 웹서비스기획, 웹프로그래머, HTML, MySQL, php, SQL, Linux, SQL,
+                                쇼핑몰, 웹사이트운영, 웹접근성, 웹퍼블리셔, 자바스크립트, CSS, HTML5, HTML코딩, UI&#183;UX, 모바일UI, 웹UI, 일러스트레이터,
+                                자바스크립트, 포토샵, CSS, GUI, HTML, UI&#183;UX디자인, 유지보수</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35594988"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">7</span>시간 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35587404|38861091|adef2038|C|SL||17892798">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35587404" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/adef2038" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">주식회사 애드이피션시</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-17892798"
+                            data-mem-sys="17892798"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnGiants moreLayer" title="강소기업"></span>
+                                <div class="tplLyType tplLyGiants" style="left:0; top:17px; width:350px; display:none;">
+                                    <div class="lyCnt">
+                                        <dl>
+                                            <dt>강소기업</dt>
+                                            <dd>고용노동부에서 임금체불이 없고<br>신용평가등급, 고용유지율, 산업재해율 등의 조건을 <br>고려해 선정한 강소기업입니다.
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">강소기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35587404?rPageCode=SL" class="link normalLog"
+                                    title="디지털 퍼포먼스광고 AE 특별채용 [경력/1년이상]" data-clickctgrcode="B02" target="_blank">디지털
+                                    퍼포먼스광고 AE 특별채용 [경력/1년이상]</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38861091 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력1년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 서초구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">전략, SA, 캠페인, 퍼포먼스, DA, GA, 광고기획, 광고대행, 온라인광고, 광고기획, 마케팅기획, 키워드광고, AE, 광고관리,
+                                브랜드, 언론홍보, 프로모션, SNS운영, 온라인마케팅, 웹광고기획, 웹마케팅, 웹프로모션, 데이터분석, 설문조사, 조사분석, 통계</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35587404"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">16</span>시간 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35582591|38856833|mkpsemi|C|SL||19338314">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35582591" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/mkpsemi" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">엠케이피㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-19338314"
+                            data-mem-sys="19338314"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnGiants moreLayer" title="강소기업"></span>
+                                <div class="tplLyType tplLyGiants" style="left:0; top:17px; width:350px; display:none;">
+                                    <div class="lyCnt">
+                                        <dl>
+                                            <dt>청년친화 강소기업</dt>
+                                            <dd>고용노동부가 선정한 강소기업 중, 초임, 근로시간, <br>복지혜택 등이 우수해 청년들이 근무할 만한 곳으로<br>선정된
+                                                기업입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">강소기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35582591?rPageCode=SL" class="link normalLog"
+                                    title="2021년도 하반기 신입/경력 공개채용" data-clickctgrcode="B02" target="_blank">2021년도 하반기
+                                    신입/경력 공개채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38856833 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력무관</span>
+                                <span class="cell">고졸↑</span>
+                                <span class="cell">경기 군포시 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">전기회로, 전자회로, Firmware, 디스플레이, 반도체장비, 회로설계, 기획조사, 전략, 문서관리, 비품관리, 시설관리, 인허가업무,
+                                자산관리, 총무, 특허업무, 전산입력, 정보처리, 물류관리, 상품입출고, 재고관리, 국내영업, 기술영업, 납품영업, 법인영업, 일반영업, 장비영업, 기술영업,
+                                반도체영업, 자동화설비영업, 거래처관리, 영업관리, 영업기획, 외주관리, 테스터, C, C#, C++, 소프트웨어, 공정관리, 생산관리, 품질관리, 생산직,
+                                조립, 포장, 디스플레이, 반도체, 연구관리, 제품개발, 회로설계, 설계엔지니어, 전기&#183;전자회로, 펌웨어, Analog, Digital, DSP,
+                                OrCAD, 기구설계, AutoCad, 검사, 수리, A&#183;S, 산업안전, 산업안전기사, 소방, 안전, 환경관리, 반도체&#183;LCD,
+                                연구&#183;실험&#183;기술, 제조&#183;공정</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35582591"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">16</span>시간 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/20</span>(금)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35584597|38858595|emnet21|C|SL||65184">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35584597" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/emnet21" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜이엠넷</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-65184"
+                            data-mem-sys="65184"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=12" target="_blank"
+                                class="lstBtnTy lstBtnKosdaq"><span class="blind">코스닥</span></a>
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35584597?rPageCode=SL" class="link normalLog"
+                                    title="AE(서울,부산)/개발자/디지털플래닝실/디자이너/카피라이터 하반기공채" data-clickctgrcode="B02"
+                                    target="_blank">AE(서울,부산)/개발자/디지털플래닝실/디자이너/카피라이터 하반기공채</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38858595 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 구로구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">데이터베이스 설계, 디지털 광고, 솔루션개발, 카피라이팅, AppsFlyer, GA, Linq, Rest API, WCF, Visual
+                                Studio, Kochava, 크리에이팅, 디지털 광고대행사, 앱/웹 플랫폼, 디지털 캠페인 전략, 콘셉트 크리에이팅, 광고기획, 광고대행, 광고디자인,
+                                광고제작, 온라인광고, 마케팅, 마케팅기획, 바이럴마케팅, 브랜딩, 소셜미디어, 시장분석, 업무제휴, 키워드광고, 프로모션, AE, 광고관리, 프로모션,
+                                홍보, 홍보기획, PR, SNS운영, 가맹점관리, 거래선개발관리, 거래처관리, 고객관리, 납품관리, 대리점관리, 매출관리, 영업관리, 영업기획, 영업지원,
+                                외주관리, 데이터베이스, SQL, .NET, 웹프로그래머, Java, SQL, .NET, 응용프로그래머, Application, C#, Java, SQL,
+                                일러스트레이터, 포토샵, 플래쉬, UI&#183;UX디자인, 시각디자인, 일러스트레이터, 포토샵, 포토샵, 광고기획, 카피라이터, 포지셔닝, AE</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35584597"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">3</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/29</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35583299|38857470|kccinfo|C|SL||12176">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35583299" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/kccinfo" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">KCC정보통신</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-12176"
+                            data-mem-sys="12176"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35583299?rPageCode=SL" class="link normalLog"
+                                    title="보안엔지니어 신입/경력사원 추가모집" data-clickctgrcode="B02" target="_blank">보안엔지니어 신입/경력사원
+                                    추가모집</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38857470 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">서울 용산구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">시스템관리, S/W, 솔루션, SI, SM, 네트웍구축, 네트워크보안, 방화벽, 보안소프트웨어, 보안ASP, 정보보안, SSL, VPN,
+                                모바일, IT컨설팅, 기술지원, 데이터베이스, DBA, MS-SQL, MySQL, SQL, 네트워크관리, 네트워크엔지니어, 보안관리, 보안기술, 서버관리자,
+                                서버구축, 시스템운영, 정보보안, Linux, Unix, .NET, 응용프로그래머, 전산전공, Java, Linux, Unix, 시스템설계, 시스템엔지니어,
+                                DBA, PM, 소프트웨어, 네트워크엔지니어, 정보통신</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35583299"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38857470|35583299|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">3</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35568063|38843811|gchealth|C|SL||9668">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35568063" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/gchealth" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜녹십자헬스케어</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-9668"
+                            data-mem-sys="9668"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35568063?rPageCode=SL" class="link normalLog"
+                                    title="2021년 하반기 수시채용" data-clickctgrcode="B02" target="_blank">2021년 하반기
+                                    수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38843811 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 영등포구 외</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">디지털마케팅, Backend, frontend, 사업기획, 서비스기획, 신규사업&#183;BD, 전략, 마케팅, 브랜딩, 브랜드,
+                                거래처관리, 고객관리, 영업관리, 영업지원, 법인영업, 데이터베이스, 웹기획, 웹서비스기획, 컨텐츠기획, 웹프로그래머, 아이폰, 안드로이드,
+                                Application, 데이터분석</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35568063"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38843811|35568063|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">3</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35579857|38854347|jhit1128|C|SL||28047190">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35579857" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/jhit1128" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">재하정보기술</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-28047190"
+                            data-mem-sys="28047190"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35579857?rPageCode=SL" class="link normalLog"
+                                    title="웹 개발 경력 및 신입사원 채용 모집" data-clickctgrcode="B02" target="_blank">웹 개발 경력 및 신입사원
+                                    채용 모집</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38854347 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력2년↑</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">경기 광명시 외</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell">3,000만원 이상</span>
+                                <span class="cell">사원급 외
+                                </span>
+                            </p>
+                            <p class="dsc">SI, GIS, SPRING, 소프트웨어개발, SI, SM, 정보처리, 정보처리기사, 웹프로그래머, Java, jsp, MS-SQL,
+                                MySQL, Servlet, SQL, xml, 응용프로그래머, 전산전공, Java, Oracle, SQL, Unix, WAS, 유지보수</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35579857"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">3</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/31</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35571576|38847066|medialog4k|C|SL||16768474">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35571576" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/medialog4k" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜미디어로그</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-16768474"
+                            data-mem-sys="16768474"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>LG그룹 계열사</span>
+
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35571576?rPageCode=SL" class="link normalLog"
+                                    title="Hybrid기술팀 개발자 경력 채용" data-clickctgrcode="B02" target="_blank">Hybrid기술팀 개발자
+                                    경력 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38847066 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력3년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 마포구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">백엔드, 아키텍쳐, 웹개발, 자바, 프론트엔드, Back End, Front-end, front end, JavaScript,
+                                jquery, MariaDB, React, spring boot, springboot, vue.js, 종합유선방송, 케이블방송, 광고기획, 광고제작,
+                                온라인광고, 모바일앱개발, 소프트웨어개발, 솔루션, SI, SM, 모바일, 모바일App, 스마트폰, 아이폰, 안드로이드, WindowsMobile,
+                                서버관리자, 서버구축, 웹프로그래머, asp, HTML, Java, jsp, SQL, 응용프로그래머, API, Java, SQL, 자바스크립트, CSS,
+                                CSS3</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35571576"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">4</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35571330|38846833|familyhr|C|SL||1325206">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35571330" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/familyhr" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜비지에프리테일</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-1325206"
+                            data-mem-sys="1325206"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+
+                            <span class="tplIcn tplIcnView" title="131위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35571330?rPageCode=SL" class="link normalLog"
+                                    title="[BGF리테일] 2021년 하반기 경력사원 수시채용" data-clickctgrcode="B02"
+                                    target="_blank">[BGF리테일] 2021년 하반기 경력사원 수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38846833 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">편의점, 마케팅, 마케팅기획, 바이럴마케팅, 시장분석, 물류, 해외마케팅, 해외영업, MD, 물류관리, 물류센터, 재고관리, SCM,
+                                가맹점관리(SV), 리테일MD, 물류, 물류관리, 상품기획, 상품입출고, 슈퍼바이저, 신상품개발, 온라인MD, 유통관리, 재고관리, 창고관리, 국내영업,
+                                납품영업, 일반영업, 해외영업, 가맹점관리, 거래처관리, 고객관리, 납품관리, 대리점관리, 매출관리, 영업관리, 영업지원, 외주관리, 재고관리, 데이터베이스,
+                                DB2, DBA, MS-SQL, MySQL, Oracle, SQL, 데이터마이닝, 네트워크관리, 네트워크엔지니어, 보안관리, 보안기술, 서버관리자, 서버구축,
+                                시스템운영, 정보보안, POS, UI설계, 바이럴마케팅, 소셜마케팅, 온라인마케팅, 웹마케팅, 웹프로그래머, Java, jsp, MS-SQL, MySQL,
+                                SQL, 안드로이드, 응용프로그래머, 전산전공, 증강현실, Application, C, C#, C++, Java, Oracle, SQL, Windows,
+                                가상현실, 시스템프로그래머, 컨텐츠개발, 컨텐츠관리, 컨텐츠에디터, UI&#183;UX, 웹UI, 일러스트레이터, Sketch, UI&#183;UX디자인,
+                                시스템분석, 시스템설계, 시스템엔지니어, DBA, 빅데이터, 데이터분석, 네트워크엔지니어, 위성통신, 정보통신, 통신기술</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35571330"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38846833|35571330|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">4</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35566847|38842828|lgmart|C|SL||242684">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35566847" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/lgmart" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜GS리테일</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-242684"
+                            data-mem-sys="242684"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>GS그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="84위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=11" target="_blank"
+                                class="lstBtnTy lstBtnStock"><span class="blind">주권상장</span></a>
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt>웹 어워드 코리아 2015 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br>웹 어워드 코리아 2015 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35566847?rPageCode=SL" class="link normalLog"
+                                    title="GS리테일 디지털커머스 GS SHOP 부문 MD 경력사원 채용" data-clickctgrcode="B02"
+                                    target="_blank">GS리테일 디지털커머스 GS SHOP 부문 MD 경력사원 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38842828 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력3년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 강남구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">마트, 숍마스터, 유통, 리테일MD, 물류, 물류관리, 상품기획, 식품MD, 신상품개발, 온라인MD, 유통관리, 패션MD, MD, VMD,
+                                AMD, 거래선개발관리, 고객관리, 영업관리, 영업기획, 영업지원, 데이터분석</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35566847"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38842828|35566847|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">4</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35561800|38838275|ktdshrm|C|SL||63525">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35561800" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/ktdshrm" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜KT DS</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-63525"
+                            data-mem-sys="63525"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>KT그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="547위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt>웹 어워드 코리아 2016 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br>웹 어워드 코리아 2016 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35561800?rPageCode=SL" class="link normalLog"
+                                    title="[kt ds]2021년 각 부문별 경력사원 수시채용" data-clickctgrcode="B02" target="_blank">[kt
+                                    ds]2021년 각 부문별 경력사원 수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38838275 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 서초구</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">개인정보보호, 사업개발, 정보통신기술사, 정보보호, Android, cloudstack, Cloud, Java spring, jquery,
+                                Mybatis, MariaDB, OpenStack, postgresql, RDBMS, spring boot, MS-SQL, MySQL, Oracle,
+                                보안관리, 보안관제, 보안기술, 서버관리자, 서버구축, 정보보안, PM, Java, jsp, MS-SQL, MySQL, Python, 안드로이드, API,
+                                C++, Java, Oracle, Python, CSS, HTML5, CSS, 시스템분석, 시스템설계, 요구분석, PM, Python, 소프트웨어, 정보통신
+                            </p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35561800"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38838275|35561800|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">4</span>일 전 등록</span>
+                        <span class="date dotum">상시채용</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35561157|38837667|dmmall|C|SL||28576674">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35561157" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/dmmall" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜한스바이오텍</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-28576674"
+                            data-mem-sys="28576674"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35561157?rPageCode=SL" class="link normalLog"
+                                    title="자신의 능력을 선보일수있는 개발자를 모집합니다." data-clickctgrcode="B02" target="_blank">자신의 능력을
+                                    선보일수있는 개발자를 모집합니다.</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38837667 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력2년↑</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">서울 금천구</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell">주임~대리급 외
+                                </span>
+                            </p>
+                            <p class="dsc">메신저앱, 블록체인, 앱개발, 키오스크개발, 블록체인 메인넷개발, 모바일앱개발, 소프트웨어개발, 데이터베이스, MS-SQL, MySQL,
+                                Oracle, SQL, .NET, 웹프로그래머, asp, ASP.NET, Java, jsp, MS-SQL, MySQL, php, Python, SQL,
+                                .NET, 아이폰, 안드로이드, 응용프로그래머, 전산전공, API, Application, ASP.NET, C, C++, Delphi, Java, Linux,
+                                Oracle, SQL, 시스템프로그래머, Python, 빅데이터, 머신러닝(ML), 데이터분석, 유지보수, 펌웨어, 소프트웨어</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35561157"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">5</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~09/03</span>(금)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35561058|38837581|isetkorea1|C|SL||17007941">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35561058" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/isetkorea1" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜아이셋코리아</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-17007941"
+                            data-mem-sys="17007941"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35561058?rPageCode=SL" class="link normalLog"
+                                    title="금융 시스템(여의도 금융회사) 개발자 모집(Java, JSP 개발자)" data-clickctgrcode="B02"
+                                    target="_blank">금융 시스템(여의도 금융회사) 개발자 모집(Java, JSP 개발자)</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38837581 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력2년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 송파구 외</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell">3,000~6,000만원</span>
+                                <span class="cell">사원급 외
+                                </span>
+                            </p>
+                            <p class="dsc">모바일앱개발, 소프트웨어개발, SI, Java, jsp, Java</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35561058"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">5</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~09/30</span>(목)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35551313|38828917|masicgong|C|SL||27624907">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35551313" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/masicgong" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">마식공㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-27624907"
+                            data-mem-sys="27624907"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35551313?rPageCode=SL" class="link normalLog"
+                                    title="웹퍼블릭 개발자, 프론트엔드 개발자, 동영상촬영/편집/SNS마케팅, 행정사무 신입/경력 채용" data-clickctgrcode="B02"
+                                    target="_blank">웹퍼블릭 개발자, 프론트엔드 개발자, 동영상촬영/편집/SNS마케팅, 행정사무 신입/경력 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38828917 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 강남구</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell">사원급 외
+                                </span>
+                            </p>
+                            <p class="dsc">HACCP, 플랫폼, MES, 스마트 HACCP 솔루션, 커스트 마이징, 모바일앱개발, 소프트웨어개발, 솔루션, 스마트폰, 서비스기획,
+                                타당성분석, 공무, 관리, 문서관리, 사무관리, 사무행정, 총무, 문서관리, 문서작성, 사무보조, 전산입력, 전산편집, 정보처리, Excel, OA,
+                                경영지원, 기장, 전표입력, 판매관리, 마케팅, 마케팅기획, 바이럴마케팅, 소셜미디어, SNS운영, 고객관리, 영업관리, 영업기획, 영업지원, 모바일기획,
+                                사용자평가, 스토리보드, 웹기획, 웹서비스기획, 웹PD, 정보설계, 제안&#183;컨설팅, 컨텐츠기획, 통계&#183;로그분석, PM, UI설계,
+                                바이럴마케팅, 소셜마케팅, 온라인마케팅, 웹마케팅, 웹프로그래머, asp, php, 안드로이드, 응용프로그래머, 전산전공, 플래시APP,
+                                Application, 웹접근성, 웹퍼블리셔, 웹표준, 자바스크립트, CSS, CSS3, HTML5, HTML코딩, UI&#183;UX, 영상편집, 프리미어,
+                                파이널컷, 방송기술, 영상편집, 카메라, 포토그래퍼, 포토샵, 프리미어, 조사분석, 웹컨설팅</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35551313"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">5</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/18</span>(수)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35546149|38824283|wontech1|C|SL||4295">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35546149" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/wontech1" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">원텍㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-4295"
+                            data-mem-sys="4295"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35546149?rPageCode=SL" class="link normalLog"
+                                    title="2021년 하반기 각 부문별 공개 채용" data-clickctgrcode="B02" target="_blank">2021년 하반기 각
+                                    부문별 공개 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38824283 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력무관</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">경기 전지역 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell">사원급 외
+                                </span>
+                            </p>
+                            <p class="dsc">의료기기, 경영기획, 기획, 복리후생관리, 총무, 인사, 인사기획, HRD, 주식IR, 마케팅, 마케팅기획, 소셜미디어, 시장분석, PR,
+                                영어, 해외마케팅, 해외영업, 무역영어, 수출입무역, 신상품개발, 기술영업, 기술지원, 거래처관리, 영업관리, 컨텐츠기획, PM, 소셜마케팅, 온라인마케팅,
+                                웹마케팅, 키워드광고, 웹프로그래머, 기계설계</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35546149"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">5</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/18</span>(수)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35543818|38822135|inicis|C|SL||21905">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35543818" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/inicis" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜케이지이니시스</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-21905"
+                            data-mem-sys="21905"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=12" target="_blank"
+                                class="lstBtnTy lstBtnKosdaq"><span class="blind">코스닥</span></a>
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt> 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br> 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35543818?rPageCode=SL" class="link normalLog"
+                                    title="하반기 IT개발 및 IT운영 경력직 채용" data-clickctgrcode="B02" target="_blank">하반기 IT개발 및
+                                    IT운영 경력직 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38822135 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력1년↑</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">서울 중구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">소프트웨어개발, 리눅스, 데이터베이스, DB2, DBA, MS-SQL, MySQL, Oracle, SQL, 데이터마이닝, 네트워크관리,
+                                네트워크엔지니어, 보안관리, 보안관제, 서버관리자, 서버구축, 시스템운영, Linux, POS, Unix, 모바일기획, 사용자평가, 웹기획, 웹서비스기획,
+                                정보설계, 제안&#183;컨설팅, 컨텐츠기획, 통계&#183;로그분석, PM, UI설계, 웹프로그래머, HTML, Java, jsp, mHTML,
+                                MS-SQL, MySQL, php, SQL, 아이폰, 안드로이드, 응용프로그래머, 전산전공, API, Application, C, C#, C++, Java,
+                                Linux, Oracle, SQL, Unix, WAS, 시스템프로그래머, 웹접근성, 웹퍼블리셔, 웹표준, 자바스크립트, CSS, CSS3, HTML5,
+                                HTML코딩, UI&#183;UX, 시스템분석, 시스템설계, 시스템엔지니어, 요구분석, DBA, PM, 유지보수, 하드웨어, 소프트웨어, 네트워크엔지니어
+                            </p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35543818"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="end">오늘마감</span></span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35545615|38823791|kipris|C|SL||78892">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35545615" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/kipris" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">한국특허정보원</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-78892"
+                            data-mem-sys="78892"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt> 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br> 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35545615?rPageCode=SL" class="link normalLog"
+                                    title="2021년 3차 한국특허정보원 직원채용" data-clickctgrcode="B02" target="_blank">2021년 3차
+                                    한국특허정보원 직원채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38823791 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">대전 전지역</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">소프트웨어개발, 시스템개발, SW개발, SW, 소프트웨어개발, 네트웍구축, IT컨설팅, Oracle, 공공기관, 공기업, 특허사무소,
+                                문서관리, 전산입력, 전산편집, 정보처리, 고객상담, 고객응대, 고객지원, CS, MS-SQL, MySQL, Oracle, SQL, 서버구축, 시스템운영,
+                                Linux, Unix, Windows, 모바일기획, 웹기획, 웹서비스기획, 정보설계, 컨텐츠기획, 통계&#183;로그분석, UI설계, .NET, 웹프로그래머,
+                                asp, ASP.NET, Java, MS-SQL, MySQL, php, Python, SQL, .NET, 아이폰, 안드로이드, 응용프로그래머, 전산전공,
+                                API, Application, ASP.NET, C, C#, C++, Delphi, Java, Linux, Oracle, Python, RFID, SAP,
+                                SQL, Unix, VB.NET, VisualC, VisualC++, WAS, Windows, 자바스크립트, CSS3, 모바일UI, 웹UI, 일러스트레이터,
+                                자바스크립트, 포토샵, CSS, GUI, HTML, xml, Sketch, UI&#183;UX디자인, 시스템설계, 시스템엔지니어, Python,
+                                인공지능(AI), 빅데이터, 사물인터넷(IoT), 머신러닝(ML), 딥러닝, 하둡(Hadoop), Spark, R, 챗봇(Chatbot), 데이터분석,
+                                소프트웨어</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35545615"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38823791|35545615|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/17</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35544291|38822566|hanjinschr|C|SL||29991727">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35544291" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/hanjinschr" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜한진중공업</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-29991727"
+                            data-mem-sys="29991727"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=11" target="_blank"
+                                class="lstBtnTy lstBtnStock"><span class="blind">주권상장</span></a>
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35544291?rPageCode=SL" class="link normalLog"
+                                    title="2021년 각분야 대졸신입사원 채용" data-clickctgrcode="B02" target="_blank">2021년 각분야
+                                    대졸신입사원 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38822566 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 용산구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">건설, 산업안전, 토목, 플랜트, 선박, 조선, 사무행정, 자산관리, 결산, 경영지원, 세무, 원가회계, 전산회계, 회계, 자금,
+                                무역일반, 바이어개발, 바이어관리, 바이어상담, 수출입계약, 영어, 일본어, 중국어, 해외마케팅, 해외영업, MD, 수출입무역, 외자구매, 납품영업,
+                                해외영업, 기술영업, 매출관리, 영업기획, 네트워크관리, 보안기술, 정보보안, .NET, 웹프로그래머, AJAX, APM, asp, ASP.NET, HDML,
+                                HTML, jsp, 안드로이드, 응용프로그래머, 전산전공, API, C#, C++, Java, SQL, 시스템프로그래머, 조선, 플랜트, 공정엔지니어, 배선,
+                                설계엔지니어, 유지보수, 전기, 전기&#183;전자회로, 품질엔지니어, 3D설계, 건축설비설계, 금형설계, 기계설계, 전기설계, 조선설계, 토목설계,
+                                AutoCad, CAM, 3DMax, 가설설계, 건축설계, 교량설계, CAD, 건축시공, 건축자재, 설계감리, 시공, 시공감리, 토목감리, 현장관리,
+                                가설설계, 교량설계, 측량, 토목기사, 계측, 건설안전, 건축설비, 기계설비, 소방설비, 시설관리, 전기공사, 전기설비, 플랜트, 산업안전,
+                                연구&#183;실험&#183;기술, 조선&#183;항공&#183;우주</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35544291"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38822566|35544291|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum">모레마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35543104|38821476|bootake|C|SL||13063144">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35543104" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/bootake" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜메쉬코리아</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-13063144"
+                            data-mem-sys="13063144"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+                            <a href="/recruit/joblist?menucode=cotype6&amp;cotype=7" target="_blank"
+                                class="lstBtnTy lstBtnVenture"><span class="blind">벤처</span></a>
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35543104?rPageCode=SL" class="link normalLog"
+                                    title="2021년 부문별 경력/신입 채용" data-clickctgrcode="B02" target="_blank">2021년 부문별 경력/신입
+                                    채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38821476 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">강원 원주시 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">개인정보보호, 리크루팅, 신사업, 웹프론트엔드, 콘텐츠크리에이터, Backend, CI/CD, DataScientist, DevOps,
+                                frontend, Docker, Kotlin, kubernetes, laravel, recruiter, RESTful API, Recruiting
+                                Manager, SPRING, Sketch, UI&#183;UX디자인, Terraform, prouduct, Tech Recruiter, 기획조사, 사업기획,
+                                사업제휴, 서비스기획, 타당성분석, 총무, 인사, 채용&#183;면접, 물류, 배차, 자재통합, 창고관리, 납품, 물류, 물류관리, 배송, 재고관리,
+                                창고관리, 거래선개발관리, 거래처관리, 고객관리, 영업관리, 외주관리, 택배&#183;운송, 검증, QA, 데이터베이스, MySQL, 데이터마이닝,
+                                네트워크관리, 네트워크엔지니어, 보안관리, 서버관리자, 시스템운영, 정보보안, CCNA, 모바일기획, 웹기획, 웹서비스기획, 컨텐츠기획, 웹프로그래머,
+                                APM, asp, Java, jsp, php, 안드로이드, 응용프로그래머, Application, Java, RFID, SQL, 시스템프로그래머,
+                                자바스크립트, 모바일UI, 웹UI, 포토샵, 플래쉬, CSS, GUI, HTML, Sketch, UI&#183;UX디자인, 모델링, 시스템분석, 시스템설계,
+                                시스템엔지니어, Python, 인공지능(AI), 빅데이터, 머신러닝(ML), 딥러닝, 하둡(Hadoop), Spark, Hive, R, 데이터분석</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35543104"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38821476|35543104|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/17</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35542860|38821244|kic2005070|C|SL||599499">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35542860" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/kic2005070" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">한국투자공사</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-599499"
+                            data-mem-sys="599499"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35542860?rPageCode=SL" class="link normalLog"
+                                    title="2021년 청년인턴(일반/장애인) 채용" data-clickctgrcode="B02" target="_blank">2021년
+                                    청년인턴(일반/장애인) 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38821244 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력무관</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 중구</span>
+                                <span class="cell">인턴</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">금융, 투자상담, 투자자문, MBA, 공공기관, 공기업, 공단, 공사, 경영기획, 기획, 사업기획, 서비스기획, 신규사업&#183;BD,
+                                전략, 타당성분석, MBA, 관리, 문서관리, 법무, 사무관리, 사무행정, 송무, 임금관리, 자산관리, 총무, 노무, 인사, 인재개발, 문서관리, 문서작성,
+                                워드, 전산회계, 4대보험, 경영지원, 관리회계, 세무, 예산관리, 원가, 원가회계, 전산회계, 출납, 회계, 회계감사, ERP운용, 감사, 결산, 공시,
+                                세무, 자금, 재무, 재무기획, 재무회계, 주식IR, 통계, 데이터베이스, 네트워크관리, 네트워크엔지니어, 보안관리, 보안관제, 보안기술, 서버관리자,
+                                시스템운영, 정보보안, .NET, 웹프로그래머, Java, MS-SQL, MySQL, Python, SQL, .NET, 아이폰, 안드로이드, 응용프로그래머,
+                                전산전공, Application, C, C#, C++, Embedded, Java, Oracle, 시스템프로그래머, 시스템분석, 시스템설계, 시스템엔지니어,
+                                시장조사, 조사분석, 통계, 법인결산, 세무, 재무, 회계, 경영지원, 금융사무, 경영기획, 경영분석, 투자심사, 투자자문, MBA</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35542860"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38821244|35542860|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/17</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35538514|38817280|newinjob|C|SL||13968332">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35538514" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/newinjob" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜뉴인</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-13968332"
+                            data-mem-sys="13968332"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+                            <a href="/recruit/joblist?menucode=cotype6&amp;cotype=7" target="_blank"
+                                class="lstBtnTy lstBtnVenture"><span class="blind">벤처</span></a>
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35538514?rPageCode=SL" class="link normalLog"
+                                    title="Backend Developer - 차세대 솔루션 개발 채용(주 33시간 근무)" data-clickctgrcode="B02"
+                                    target="_blank">Backend Developer - 차세대 솔루션 개발 채용(주 33시간 근무)</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38817280 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력3년↑</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 마포구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">백앤드, AWS, Back End, CI/CD, DevOps, DynamoDB, Elastic Search, front end,
+                                JavaScript, MSA, Node, NODE.JS, React, Typescript, graphql, Serverless, 솔루션, SQL,
+                                웹프로그래머, php, SQL, API, SQL, 자바스크립트, CSS, 자바스크립트, CSS</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35538514"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/31</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35536611|38815556|autoever|C|SL||19481">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35536611" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/autoever" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">현대오토에버㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-19481"
+                            data-mem-sys="19481"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>현대자동차그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="364위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35536611?rPageCode=SL" class="link normalLog"
+                                    title="현대오토에버 신입사원 수시채용" data-clickctgrcode="B02" target="_blank">현대오토에버 신입사원
+                                    수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38815556 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">경기 전지역 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">모바일앱개발, 소프트웨어개발, ERP, SM, 전기, 전기설계, 전자, 제어, Firmware, Hardware, 디스플레이, 반도체,
+                                회로설계, 기획, 사업기획, 전략, 데이터베이스, DW, Oracle, SQL, 데이터마이닝, .NET, 웹프로그래머, Java, MS-SQL, Python,
+                                SQL, 아이폰, 안드로이드, 응용프로그래머, 전산전공, Application, C, C#, C++, Java, Linux, Oracle, SQL, Unix,
+                                UI&#183;UX, 모바일UI, 웹UI, 포토샵, HTML, UI&#183;UX디자인, 모델링, 시스템분석, 시스템설계, 시스템엔지니어, 요구분석,
+                                Python, 인공지능(AI), 빅데이터, 딥러닝, R, 데이터분석, 하드웨어, 연구관리, 연구원, 제어, 제품개발, 기구설계, 디스플레이, 반도체,
+                                전기&#183;전자, 정보통신&#183;IT, 제어, 제품개발, 터치스크린, 회로설계, PCB, R&amp;D, 설계엔지니어, 전기, 전기&#183;전자회로,
+                                전기설비, 테스트엔지니어, 품질엔지니어, 하드웨어, 회로설계, Analog, Digital, 전기설계, CAD, CAM, Pro-e</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35536611"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38815556|35536611|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum">내일마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35502560|38785522|kdts|C|SL||347398">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35502560" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/kdts" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">현대트랜시스㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-347398"
+                            data-mem-sys="347398"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>현대자동차그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="223위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35502560?rPageCode=SL" class="link normalLog"
+                                    title="2021년 경력 및 신입모집" data-clickctgrcode="B02" target="_blank">2021년 경력 및
+                                    신입모집</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38785522 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력3년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">충남 서산시 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">자동차, 자동차부품, 물류, 원부자재구매, 자재구매기획, 구매관리, 자재통합, 국내영업, 법인영업, 일반영업, 거래처관리, 고객관리,
+                                영업관리, 기술영업, 납품영업, 법인영업, 일반영업, 데이터베이스, 응용프로그래머, C, Java, 시스템프로그래머, 시스템분석, 시스템엔지니어, 요구분석,
+                                유지보수, 펌웨어, 하드웨어, FPGA, 소프트웨어, 6시그마, 공정, 공정관리, 생산관리, 안전, 품질, 품질검사, 품질관리, 품질보증, 환경관리, 기계,
+                                기능직, 절단, 제조, 기능직, 생산직, 금속, 금형설계, 기계, 기구설계, 기술직, 메카트로닉스, 생산기술, 연구관리, 연구원, 제품개발, 플랜트,
+                                catia, R&amp;D, 기구설계, 기술직, 디스플레이, 메카트로닉스, 전기&#183;전자, 제품개발, 회로설계, PCB, R&amp;D, 기구설계,
+                                기술연구소, 기술직, 생산기술, 에너지, 연구관리, 연구원, 제품개발, 플라스틱&#183;PVC, R&amp;D, 공정엔지니어, 마이크로프로세서,
+                                설계엔지니어, 유지보수, 전기, 전기&#183;전자회로, 전기설비, 테스트엔지니어, 품질엔지니어, 하드웨어, OrCAD, PCB, PDA, PLC, 3D설계,
+                                건축설계, AutoCad, CAD, CAM, 공업디자인, 금속디자인, 제품디자인</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35502560"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38785522|35502560|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35538149|38816962|medialog4k|C|SL||16768474">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35538149" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/medialog4k" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜미디어로그</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-16768474"
+                            data-mem-sys="16768474"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>LG그룹 계열사</span>
+
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35538149?rPageCode=SL" class="link normalLog"
+                                    title="유플러스 알뜰모바일 개발/기획자 경력직 채용" data-clickctgrcode="B02" target="_blank">유플러스 알뜰모바일
+                                    개발/기획자 경력직 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38816962 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력3년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 마포구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">백엔드, 아키텍쳐, 웹개발, 프론트엔드, Back End, front end, jquery, MariaDB, spring boot,
+                                종합유선방송, 케이블방송, 광고기획, 광고제작, 온라인광고, 모바일앱개발, 소프트웨어개발, 솔루션, SI, SM, 모바일, 모바일App, 스마트폰, 아이폰,
+                                안드로이드, WindowsMobile, 기획, 사업기획, 서비스기획, 전략, MySQL, 서버관리자, 서버구축, 모바일기획, 사용자평가, 웹기획,
+                                웹서비스기획, 웹PD, 정보설계, 제안&#183;컨설팅, 컨텐츠기획, 통계&#183;로그분석, UI설계, 웹프로그래머, asp, Java, jsp, SQL,
+                                응용프로그래머, Java, SQL</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35538149"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">6</span>일 전 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35519498|38800714|hmm21|C|SL||158710">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35519498" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/hmm21" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">에이치엠엠</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-158710"
+                            data-mem-sys="158710"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+
+                            <span class="tplIcn tplIcnView" title="68위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=11" target="_blank"
+                                class="lstBtnTy lstBtnStock"><span class="blind">주권상장</span></a>
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35519498?rPageCode=SL" class="link normalLog"
+                                    title="[HMM] 2021년 신입/경력사원 수시채용" data-clickctgrcode="B02" target="_blank">[HMM]
+                                    2021년 신입/경력사원 수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38800714 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 종로구</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">선박, 솔루션, 그룹웨어, MCP, PMO, VDI, UC, VMware, 배송, 보세운송, 입하, 출하, 해상운송, 관리, 문서관리,
+                                법무, 사무관리, 사무행정, 송무, ERP운용, SAP, 프로모션, 광고관리, 프로모션, 홍보, 홍보기획, SNS운영, 수출입계약, 해운, QA,
+                                Windows, 데이터베이스, MS-SQL, SQL, 시스템운영, Windows, 웹기획, PM, 바이럴마케팅, 소셜마케팅, 온라인마케팅, 웹광고기획,
+                                웹마케팅, 웹프로모션, 키워드광고, .NET, 웹프로그래머, APM, Java, MS-SQL, SQL, .NET, 아이폰, 안드로이드, 응용프로그래머,
+                                API, Application, Java, SAP, SQL, Windows, 시스템프로그래머, 게시판관리, 웹사이트운영, 카페&#183;블로그관리,
+                                컨텐츠개발, 컨텐츠관리, 컨텐츠에디터, 일러스트레이터, 자바스크립트, 포토샵, 시스템분석, 시스템설계, 시스템엔지니어, PM, 영상편집, 빅데이터, 유지보수,
+                                소프트웨어, 일러스트레이터, 포토샵, 포스터디자인, 영상편집, 포토샵, 로펌, 법률서비스, 변호사, 변호사사무장</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35519498"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38800714|35519498|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">08/02</span>(월) 등록</span>
+                        <span class="date dotum">모레마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35519511|38800727|wiainsa|C|SL||651409">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35519511" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/wiainsa" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">현대위아㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-651409"
+                            data-mem-sys="651409"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>현대자동차그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="73위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35519511?rPageCode=SL" class="link normalLog"
+                                    title="2021년 하반기 연구개발 경력사원 모집" data-clickctgrcode="B02" target="_blank">2021년 하반기
+                                    연구개발 경력사원 모집</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38800727 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">경기 전지역 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">시스템프로그래머, 임베디드, 모델링, 시스템분석, 시스템설계, 시스템엔지니어, 하드웨어, 소프트웨어, 기계, 기술연구소, 생산기술,
+                                연구관리, 제어, 제품개발, 설계엔지니어, 임베디드, 펌웨어, 품질엔지니어, 하드웨어, 회로설계, 전기&#183;전자, 정보통신&#183;IT,
+                                기계&#183;자동차, 로봇&#183;자동화, 연구&#183;실험&#183;기술, 제조&#183;공정</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35519511"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38800727|35519511|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">08/02</span>(월) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35518878|38800164|danalx|C|SL||24775">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35518878" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/danalx" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜다날</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-24775"
+                            data-mem-sys="24775"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=12" target="_blank"
+                                class="lstBtnTy lstBtnKosdaq"><span class="blind">코스닥</span></a>
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnGiants moreLayer" title="강소기업"></span>
+                                <div class="tplLyType tplLyGiants" style="left:0; top:17px; width:350px; display:none;">
+                                    <div class="lyCnt">
+                                        <dl>
+                                            <dt>청년친화 강소기업</dt>
+                                            <dd>고용노동부가 선정한 강소기업 중, 초임, 근로시간, <br>복지혜택 등이 우수해 청년들이 근무할 만한 곳으로<br>선정된
+                                                기업입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">강소기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+
+                            <a href="/recruit/joblist?menucode=cotype6&amp;cotype=7" target="_blank"
+                                class="lstBtnTy lstBtnVenture"><span class="blind">벤처</span></a>
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35518878?rPageCode=SL" class="link normalLog"
+                                    title="2021년 하반기 다날 개발직군 수시 채용" data-clickctgrcode="B02" target="_blank">2021년 하반기
+                                    다날 개발직군 수시 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38800164 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">경기 성남시</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">백엔드, 교육, 교육기획, 교육훈련, 솔루션영업, 데이터베이스, MS-SQL, MySQL, 데이터마이닝, 네트워크관리, 네트워크엔지니어,
+                                보안관리, 보안관제, 보안기술, 시스템운영, 정보보안, 웹기획, 웹서비스기획, 웹프로그래머, ASP.NET, Java, MS-SQL, API, ASP.NET,
+                                Java, Linux, Python, 시스템프로그래머, Python, 빅데이터, 데이터분석</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35518878"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">08/02</span>(월) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/22</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35507230|38789710|vivarepublica1|C|SL||19576969">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35507230" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/vivarepublica1" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜비바리퍼블리카</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-19576969"
+                            data-mem-sys="19576969"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+                            <a href="/recruit/joblist?menucode=cotype6&amp;cotype=7" target="_blank"
+                                class="lstBtnTy lstBtnVenture"><span class="blind">벤처</span></a>
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35507230?rPageCode=SL" class="link normalLog"
+                                    title="[2021 토스 NEXT 개발자 챌린지]" data-clickctgrcode="B02" target="_blank">[2021 토스
+                                    NEXT 개발자 챌린지]</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38789710 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력무관</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 강남구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">.NET, 웹프로그래머, AJAX, APM, asp, ASP.NET, cgi, EJB, HDML, HTML, Java, jsp,
+                                mHTML, MiPlatform, MS-SQL, MySQL, php, Python, SCJP, Servlet, SQL, VB.NET, VRML,
+                                WinForm, wml, xml, Ruby, .NET, 병역특례, 아이폰, 안드로이드, 액션스크립트, 응용프로그래머, 전산전공, 증강현실, 플래시APP,
+                                ABAP, ActiveX, API, Application, ASP.NET, C, C#, C#Builder, C++, C++Builder, CTI,
+                                Delphi, DirectX, Embedded, Java, Linux, MFC, Oracle, PowerBuilder, Pro-C, Python, RFID,
+                                SAP, SQL, Unix, VB.NET, VisualBasic, VisualC, VisualC++, VoIP, WAS, Win32, Windows,
+                                WindowsMobile, 가상현실, 시스템프로그래머, 어셈블리, 임베디드, 펌웨어, HMI, MMI, PLC, 웹퍼블리셔, 웹표준, CSS, CSS3,
+                                HTML5, HTML코딩</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35507230"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38789710|35507230|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">08/02</span>(월) 등록</span>
+                        <span class="date dotum">모레마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35512448|38794324|ts5423|C|SL||4858">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35512448" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/ts5423" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜비상교육</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-4858"
+                            data-mem-sys="4858"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=11" target="_blank"
+                                class="lstBtnTy lstBtnStock"><span class="blind">주권상장</span></a>
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt>웹 어워드 코리아 2010 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br>웹 어워드 코리아 2010 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35512448?rPageCode=SL" class="link normalLog"
+                                    title="8월 각 부문별 경력 및 신입 채용" data-clickctgrcode="B02" target="_blank">8월 각 부문별 경력 및
+                                    신입 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38794324 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력1년↑</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">경기 파주시 외</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">보건관리, 경영기획, 기획, 기획조사, 재무, 물류, 배차, 원부자재구매, 자재구매, 자재구매기획, 창고관리, 상품기획, 영업지원,
+                                모바일기획, 웹기획, 웹서비스기획, 정보설계, 제안&#183;컨설팅, 컨텐츠기획, UI설계, 바이럴마케팅, 소셜마케팅, 온라인마케팅, 웹광고기획, 웹마케팅,
+                                웹프로모션, 웹프로그래머, APM, HTML, Java, jsp, MS-SQL, MySQL, php, Python, 액션스크립트, 응용프로그래머,
+                                Application, C, C#, C++, Java, Linux, Oracle, Python, SQL, Unix, Windows, WindowsMobile,
+                                웹접근성, 웹퍼블리셔, 웹표준, 자바스크립트, CSS, CSS3, HTML5, HTML코딩, UI&#183;UX, 일러스트레이터, 포토샵, 인공지능(AI),
+                                빅데이터, 그래픽디자인, 시각디자인, 일러스트레이터, 코렐드로우, 포토샵, GUI, 교재편집, 맥디자인, 북디자인, 편집디자인(IBM), 편집디자인(MAC),
+                                시각디자인, 방송기술, 사진관, 영사기사, 영상편집, 리모델링, 빌트인설계, 실내건축, 실내디자인, 인테리어설계, 인테리어시공, CAD, 사회, 수학, 영어,
+                                과학, 입시학원강사, 안내상담, 영어강사, 교수설계, 교육기획, 교육진행, 교재컨텐츠개발, 교육프로그램</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35512448"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38794324|35512448|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">08/01</span>(일) 등록</span>
+                        <span class="date dotum">내일마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35519933|38801105|jongienara|C|SL||49991">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35519933" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/jongienara" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜종이나라</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-49991"
+                            data-mem-sys="49991"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35519933?rPageCode=SL" class="link normalLog"
+                                    title="종이나라 전산개발 경력직 채용" data-clickctgrcode="B02" target="_blank">종이나라 전산개발 경력직
+                                    채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38801105 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력7년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 중구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">영림원, K-system, 문구, 생활용품, 데이터베이스, 네트워크관리, 네트워크엔지니어, 서버관리자, 서버구축, 시스템운영,
+                                웹프로그래머, 응용프로그래머, 시스템분석, 시스템설계, 시스템엔지니어, 유지보수</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35519933"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/30</span>(금) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/31</span>(화)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35512735|38794602|cowayhr|C|SL||34242110">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35512735" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/cowayhr" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">코웨이㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-34242110"
+                            data-mem-sys="34242110"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt bgApp">
+                                        <dl>
+                                            <dt>스마트 앱 어워드 2016 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br>스마트 앱 어워드 2016 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35512735?rPageCode=SL" class="link normalLog"
+                                    title="코웨이 본사/연구소 수시채용" data-clickctgrcode="B02" target="_blank">코웨이 본사/연구소
+                                    수시채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38794602 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 전지역 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">경영기획, 기획, 변화관리, 사업기획, 서비스기획, 신규사업&#183;BD, 전략, 타당성분석, 교육기획, 노무, 노사관리, 인사,
+                                인사기획, 인사통합, 직무분석, HRD, HRM, 라이센싱, 브랜딩, 시장분석, 업무제휴, 퍼블리싱, 프로모션, CRM, IMC, 리테일MD, 물류관리,
+                                상품기획, 온라인MD, MD, VMD, 고객문의분석, 데이터베이스, DBA, MS-SQL, 데이터마이닝, 사용자평가, 스토리보드, 웹기획, 웹서비스기획,
+                                정보설계, 통계&#183;로그분석, 온라인마케팅, 웹마케팅, 웹프로모션, .NET, 웹프로그래머, Java, .NET, 응용프로그래머, C, C#, Java,
+                                Linux, 시스템프로그래머, 임베디드, 펌웨어, 웹접근성, 웹퍼블리셔, 웹표준, 자바스크립트, CSS, HTML5, HTML코딩, UI&#183;UX,
+                                시스템분석, 시스템설계, 시스템엔지니어, 요구분석, 빅데이터, 딥러닝, 데이터분석, 유지보수, 펌웨어, 소프트웨어, 설문조사, 시장조사, 조사분석, 통계,
+                                경영분석, 컨설턴트, HR컨설팅</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35512735"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38794602|35512735|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/30</span>(금) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35501950|38784999|cjfuture|C|SL||64849">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35501950" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/cjfuture" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">유진투자선물㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-64849"
+                            data-mem-sys="64849"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>유진그룹 계열사</span>
+
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35501950?rPageCode=SL" class="link normalLog"
+                                    title="IT 운영/개발, 인프라 경력사원 채용" data-clickctgrcode="B02" target="_blank">IT 운영/개발, 인프라
+                                    경력사원 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38784999 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 영등포구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">DBMS, 데이터베이스, Oracle, 네트워크관리, 방화벽, 보안관리, 보안기술, 서버관리자, 시스템운영, Linux, Unix, C,
+                                Linux, Oracle, Pro-C, Unix</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35501950"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38784999|35501950|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/29</span>(목) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/15</span>(일)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35500693|38783849|dbinc1|C|SL||22657839">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35500693" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/dbinc1" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜DB Inc.</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-22657839"
+                            data-mem-sys="22657839"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>DB그룹 계열사</span>
+
+                        </p>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=11" target="_blank"
+                                class="lstBtnTy lstBtnStock"><span class="blind">주권상장</span></a>
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35500693?rPageCode=SL" class="link normalLog"
+                                    title="[DB Inc. &amp; DB FIS] 2021년 경력사원 공개채용" data-clickctgrcode="B02"
+                                    target="_blank">[DB Inc. &amp; DB FIS] 2021년 경력사원 공개채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38783849 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">서울 강남구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">PM, 모바일앱개발, 소프트웨어개발, 솔루션, SI, SM, 네트워크보안, 보안ASP, 정보보안, 모바일, 모바일App, 스마트폰,
+                                아이폰, IT컨설팅, Oracle, SAP, 교육, 교육기획, 교육훈련, 노무, 인사, 인사기획, 인사통합, HRD, 영어, 국내영업, 기술영업, 납품영업,
+                                법인영업, 일반영업, 해외영업, 기술영업, 기술지원, 네트워크영업, 솔루션영업, 웹사이트구축영업, 하드웨어영업, 거래선개발관리, 거래처관리, 고객관리,
+                                납품관리, 매출관리, 영업기획, 영업지원, 외주관리, 기술영업, 법인영업, 일반영업, 장비영업, 리눅스, 유닉스, QA, 데이터베이스, DBA, Oracle,
+                                SQL, 네트워크관리, 네트워크엔지니어, 방화벽, 보안관리, 보안관제, 보안기술, 서버관리자, 서버구축, 시스템운영, 정보보안, CCNA, Cisco,
+                                Linux, Solaris, Unix, 웹서비스기획, 정보설계, PM, 웹프로그래머, Java, Python, SQL, 아이폰, 안드로이드, 응용프로그래머,
+                                전산전공, Application, C, Java, Linux, Oracle, Python, Unix, 가상현실, 시스템프로그래머, 시스템분석, 시스템설계,
+                                시스템엔지니어, PM, Python, 빅데이터, 사물인터넷(IoT), 유지보수, 소프트웨어</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35500693"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38783849|35500693|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/29</span>(목) 등록</span>
+                        <span class="date dotum">모레마감</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35480066|38765221|aircode|C|SL||2042">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35480066" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/aircode" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜에어코드</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-2042"
+                            data-mem-sys="2042"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnGiants moreLayer" title="강소기업"></span>
+                                <div class="tplLyType tplLyGiants" style="left:0; top:17px; width:350px; display:none;">
+                                    <div class="lyCnt">
+                                        <dl>
+                                            <dt>청년친화 강소기업</dt>
+                                            <dd>고용노동부가 선정한 강소기업 중, 초임, 근로시간, <br>복지혜택 등이 우수해 청년들이 근무할 만한 곳으로<br>선정된
+                                                기업입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">강소기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+
+                            <a href="/recruit/joblist?menucode=cotype6&amp;cotype=7" target="_blank"
+                                class="lstBtnTy lstBtnVenture"><span class="blind">벤처</span></a>
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35480066?rPageCode=SL" class="link normalLog"
+                                    title="SW개발, 서비스기획 전문연구요원 신입/경력 채용" data-clickctgrcode="B02" target="_blank">SW개발,
+                                    서비스기획 전문연구요원 신입/경력 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38765221 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력1년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 금천구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">전문연구요원, 제안서, CCNP, Cloud, HW, web, vr, (주)에어코드, 쳇봇, 모바일앱개발, 소프트웨어개발, 솔루션, SI,
+                                웹에이전시, 모바일, 모바일App, 데이터베이스, MySQL, Oracle, SQL, 네트워크관리, 서버관리자, 서버구축, 시스템운영, CCNA, Linux,
+                                Windows, 모바일기획, 웹기획, 웹서비스기획, PM, UI설계, 웹프로그래머, HTML, Java, MySQL, VRML, 병역특례, 아이폰,
+                                안드로이드, 응용프로그래머, 플래시APP, Application, C, C++, Java, Oracle, Python, Windows, HTML5,
+                                HTML코딩, UI&#183;UX, 인공지능(AI), 빅데이터, 유지보수, 하드웨어, 소프트웨어, 정보통신&#183;IT</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35480066"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/28</span>(수) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/16</span>(월)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35474214|38760004|angello|C|SL||3690">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35474214" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/angello" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜NE능률</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-3690"
+                            data-mem-sys="3690"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+                            <a href="/recruit/joblist?menucode=cotype5&cotype=12" target="_blank"
+                                class="lstBtnTy lstBtnKosdaq"><span class="blind">코스닥</span></a>
+
+
+
+
+                            <div class="tplLyWrap">
+                                <span class="lstBtnTy lstBtnAward moreLayer" title="수상기업"></span>
+                                <!--// 레이어 -->
+                                <div class="tplLyType tplLyAward" style="left:0; top:17px; width:300px; display:none;">
+                                    <div class="lyCnt ">
+                                        <dl>
+                                            <dt>웹 어워드 코리아 2014 수상기업</dt>
+                                            <dd>해당 기업은 한국인터넷전문가협회가 주관한<br>웹 어워드 코리아 2014 수상기업 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <p class="lyBtn"><button type="button" class="tplBtnTy tplLyBtnClose"><span
+                                                class="blind">수상기업 안내 닫기</span></button></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35474214?rPageCode=SL" class="link normalLog"
+                                    title="[워라밸실천기업] NE능률 웹 개발자 채용" data-clickctgrcode="B02" target="_blank">[워라밸실천기업]
+                                    NE능률 웹 개발자 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38760004 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력5년↑</span>
+                                <span class="cell">초대졸↑</span>
+                                <span class="cell">서울 마포구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">교재제작, 컨텐츠개발, IT학원, 데이터베이스, MS-SQL, MySQL, SQL, 데이터마이닝, 네트워크관리, 네트워크엔지니어,
+                                서버관리자, 서버구축, 시스템운영, 웹프로그래머, asp, ASP.NET, Java, MS-SQL, MySQL, php, SQL, 안드로이드, API,
+                                Application, ASP.NET, Java, Python, SQL, 시스템프로그래머, 시스템분석, 시스템설계, 시스템엔지니어, 요구분석, PM,
+                                유지보수, 소프트웨어</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35474214"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnOrg dev-btn-apply"><span>즉시지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/26</span>(월) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/25</span>(수)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35451580|38740115|nhnsm|C|SL||23244">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35451580" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/nhnsm" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">플레이디(구 엔서치마케팅)</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-23244"
+                            data-mem-sys="23244"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35451580?rPageCode=SL" class="link normalLog"
+                                    title="2021년 하반기 신입/경력 공개 채용" data-clickctgrcode="B02" target="_blank">2021년 하반기
+                                    신입/경력 공개 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38740115 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">신입&#183;경력</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">경기 성남시</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">광고기획, 광고디자인, 온라인광고, 경영기획, 경영혁신, 기획, 기획조사, 사업기획, 서비스기획, 관리, 문서관리, 법무, 사무관리,
+                                사무행정, 광고기획, 마케팅, 마케팅기획, 바이럴마케팅, 브랜딩, 시장분석, 업무제휴, 키워드광고, 퍼블리싱, AE, 광고관리, 브랜드, 사보제작, 언론홍보,
+                                이벤트, 프로모션, 홍보, 홍보기획, PR, SNS운영, 상품기획, 온라인MD, MD, AMD, 영업관리, 영업기획, 영업지원, 광고영업, 매체광고영업,
+                                온라인광고영업, 키워드광고, 데이터베이스, DBA, MySQL, Oracle, SQL, 바이럴마케팅, 소셜마케팅, 온라인마케팅, 웹광고기획, 웹마케팅,
+                                웹프로모션, 키워드광고, Java, MS-SQL, MySQL, SQL, 광고기획, 광고제작, 카피라이터</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35451580"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38740115|35451580|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/26</span>(월) 등록</span>
+                        <span class="date dotum"><span class="end">오늘마감</span></span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35438827|38728680|ssthales|C|SL||133671">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35438827" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/ssthales" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">한화시스템㈜/방산</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-133671"
+                            data-mem-sys="133671"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>한화그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="516위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35438827?rPageCode=SL" class="link normalLog"
+                                    title="2021년 한화시스템 방산부문 하반기 경력사원 채용" data-clickctgrcode="B02" target="_blank">2021년
+                                    한화시스템 방산부문 하반기 경력사원 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38728680 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력3년↑</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 중구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">Firmware, 3D CAD, 레이다, EMI, EMC, ILS, matlab, 기구설계, 자동제어, 전기설계, 전기회로, 제어,
+                                경영기획, 기획, 기획조사, 사업기획, 서비스기획, 신규사업&#183;BD, 전략, 법무, 인사, 인사기획, 인사통합, 인재개발, 채용&#183;면접, 결산,
+                                관리회계, 더존, 원가회계, 전산회계, 전표입력, 출납, 판매관리, ERP운용, SAP, 국내영업, 기술영업, 일반영업, 가맹점관리, 거래선개발관리,
+                                거래처관리, 고객관리, 대리점관리, 매출관리, 영업관리, 영업기획, 채권관리, 보안기술, 정보보안, Linux, 응용프로그래머, 전산전공, C, C#,
+                                C++, C++Builder, Embedded, Java, Linux, MFC, VisualBasic, VisualC, VisualC++, Python,
+                                인공지능(AI), 빅데이터, 사물인터넷(IoT), 딥러닝, 하둡(Hadoop), Spark, R, 데이터분석, FPGA, FPGA, OrCAD, 금형설계,
+                                기계설계, 기구설계, 전기설계, AutoCad, CAD, CAM, catia, Pro-e, 광통신, 무선통신, 위성통신, 전자통신, 정보통신, 통신공사,
+                                통신기술, ADSL, RF, 로스쿨, 로펌, 법무대리, 법학전공, 변호사, 정보통신&#183;IT, 조선&#183;항공&#183;우주</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35438827"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38728680|35438827|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/26</span>(월) 등록</span>
+                        <span class="date dotum">상시채용</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35438445|38728351|ssthales|C|SL||133671">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35438445" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/ssthales" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">한화시스템㈜/방산</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-133671"
+                            data-mem-sys="133671"><span class="blind">관심기업</span></button>
+                        <p class="info dotum">
+                            <span>한화그룹 계열사</span>
+                            <br />
+
+                            <span class="tplIcn tplIcnView" title="516위"><span class="tahoma">1000</span>대기업</span>
+                        </p>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35438445?rPageCode=SL" class="link normalLog"
+                                    title="2021년 한화시스템 방산부문 신사업분야 경력사원 채용" data-clickctgrcode="B02"
+                                    target="_blank">2021년 한화시스템 방산부문 신사업분야 경력사원 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38728351 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력</span>
+                                <span class="cell">대졸↑</span>
+                                <span class="cell">서울 중구 외</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">안테나, 위성, 항공기, AWR, EMC, HFSS, matlab, Psim, SAR, ISL, 기구설계, 자동제어, 전기설계, 전기회로,
+                                제어, Python, 응용프로그래머, 전산전공, C, C#, C#Builder, C++, C++Builder, Embedded, Java, Linux,
+                                Oracle, Python, RFID, Unix, VisualC, VisualC++, 시스템프로그래머, 어셈블리, 임베디드, 펌웨어, PLC, Python,
+                                유지보수, 하드웨어, FPGA, 소프트웨어, FPGA, PADS, RF, 3D설계, 기계설계, 기구설계, 전기설계, AutoCad, CAD, CAM,
+                                catia, Pro-e, 네트워크엔지니어, 위성통신, 전자통신, 정보통신, 통신기술, ADSL, RF</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35438445"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38728351|35438445|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/26</span>(월) 등록</span>
+                        <span class="date dotum">상시채용</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0"
+                    data-info=" 35453215|38741577|coupangengine|C|SL||32293041">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35453215" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/coupangengine" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">쿠팡㈜</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-32293041"
+                            data-mem-sys="32293041"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35453215?rPageCode=SL" class="link normalLog"
+                                    title="[Coupang] 로켓 커리어 전환 프로그램 (Rocket Career Change Program)"
+                                    data-clickctgrcode="B02" target="_blank">[Coupang] 로켓 커리어 전환 프로그램 (Rocket Career
+                                    Change Program)</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38741577 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력5년↑</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 송파구</span>
+                                <span class="cell">정규직</span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">상품기획, 소셜커머스, 오픈마켓, 온라인경매, 전자상거래, B2B, B2C, EC, 검증, 리눅스, 아파치, 웹마스터, 유닉스,
+                                데이터베이스, DB2, DBA, DW, MS-SQL, MySQL, OCP, OLAP, Oracle, SQL, Sybase, 데이터마이닝, .NET,
+                                웹프로그래머, AJAX, APM, asp, ASP.NET, cgi, EJB, HDML, HTML, Java, jsp, mHTML, MiPlatform,
+                                MS-SQL, MySQL, php, Python, SCJP, Servlet, SQL, VB.NET, VRML, WinForm, wml, xml, Ruby,
+                                ActiveX, API, C, C#, C#Builder, C++, C++Builder, CTI, Delphi, DirectX, Embedded, Java,
+                                Linux, MFC, Oracle, PowerBuilder, Pro-C, Python, RFID, SAP, SQL, Unix, VB.NET,
+                                VisualBasic, VisualC, VisualC++, VoIP, WAS, Windows, 시스템프로그래머, 어셈블리, 임베디드, 펌웨어, HMI,
+                                MMI, PLC, Python, 인공지능(AI), 빅데이터, 사물인터넷(IoT), 머신러닝(ML), R, Perl, 데이터분석, 하드웨어, 소프트웨어</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35453215"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38741577|35453215|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/26</span>(월) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~08/12</span>(목)</span>
+                    </td>
+                </tr>
+                <tr class="devloopArea" data-effectctgr-code="0" data-info=" 35395364|38689496|woongjin99|C|SL||120845">
+                    <th scope="row">
+                        <span class="tplChkRect tplChkRect_1">
+                            <input type="checkbox" id="ckb_normal_35395364" name="gno" title="현재 행 선택" />
+                            <span class="tplBtn bxIpt dev-apply-check"></span>
+                        </span>
+                    </th>
+                    <td class="tplCo">
+                        <!--app.svcFunc.clickCnt-->
+                        <a href="/Recruit/Co_Read/C/woongjin99" class="link normalLog" data-clickctgrcode="B01"
+                            target="_blank">㈜웅진</a>
+                        <button type="button" class="tplBtnTy tplBtnFavOff dev-favor dev-tplBtnFav-120845"
+                            data-mem-sys="120845"><span class="blind">관심기업</span></button>
+                        <div class="typ">
+
+
+
+
+
+
+                        </div>
+                    </td>
+                    <td class="tplTit">
+                        <div class="titBx">
+                            <strong><a href="/Recruit/GI_Read/35395364?rPageCode=SL" class="link normalLog"
+                                    title="(주)웅진 IT직무 경력직 상시 채용" data-clickctgrcode="B02" target="_blank">(주)웅진 IT직무 경력직
+                                    상시 채용</a></strong>
+                            <button type="button" class="tplBtnTy dev-scrap dev-tplBtnScr-38689496 tplBtnScrOff"><span
+                                    class="blind">스크랩</span></button>
+                            <p class="etc">
+                                <span class="cell">경력1년↑</span>
+                                <span class="cell">학력무관</span>
+                                <span class="cell">서울 종로구</span>
+                                <span class="cell">정규직 외
+                                </span>
+
+                                <span class="cell"></span>
+                            </p>
+                            <p class="dsc">ERP운용, SAP, CRM, SCM, DBA, MS-SQL, MySQL, Oracle, SQL, 네트워크관리, 네트워크엔지니어, 방화벽,
+                                보안관리, 보안관제, 보안기술, 서버관리자, 서버구축, 시스템운영, 정보보안, CCNA, LAN, Linux, Unix, 모바일기획, 사용자평가, 웹기획,
+                                웹서비스기획, 정보설계, 제안&#183;컨설팅, 컨텐츠기획, 통계&#183;로그분석, PM, UI설계, .NET, 웹프로그래머, APM, Java, jsp,
+                                MS-SQL, MySQL, Python, SQL, .NET, 아이폰, 안드로이드, 응용프로그래머, API, Application, C#, Java,
+                                Linux, Oracle, Python, SAP, SQL, Unix, 시스템프로그래머, 자바스크립트, 시스템분석, 시스템설계, 시스템엔지니어, 요구분석,
+                                DBA, PM, Python, 빅데이터, 데이터분석, 교재컨텐츠개발, 교육프로그램, 교육&#183;교재연구</p>
+                        </div>
+                    </td>
+                    <td class="tplPrv">
+                        <button type="button" class="lstBtn lstBtnPreview devReadPreview" data-gno="35395364"><span
+                                class="lstIe">미리보기</span></button>
+                    </td>
+                    <td class="odd">
+                        <button type="button" class="tplBtn tplBtn_1 tplBtnBlue devApplyEtc"
+                            data-info="/List_GI/GIB_Read_homepage_Link.asp?GI_NO=38689496|35395364|C04|1|6|0"><span>홈페이지
+                                지원</span></button>
+
+                        <span class="time dotum"><span class="tahoma">07/20</span>(화) 등록</span>
+                        <span class="date dotum"><span class="tahoma">~12/31</span>(금)</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="chkApplyWrap">
+            <button type="button" class="lstBtn btnChkApply"><span>선택한 공고 한번에 지원하기</span></button>
+        </div>
+    </div>
+
+    <div id="dvGIPaging">
+        <div class="tplPagination newVer">
+
+
+            <ul>
+
+                <li><span class="now" data-page="1">1</span></li>
+                <li><a href="/recruit/_GI_List?Page=2" data-page="2">2</a></li>
+                <li><a href="/recruit/_GI_List?Page=3" data-page="3">3</a></li>
+                <li><a href="/recruit/_GI_List?Page=4" data-page="4">4</a></li>
+                <li><a href="/recruit/_GI_List?Page=5" data-page="5">5</a></li>
+                <li><a href="/recruit/_GI_List?Page=6" data-page="6">6</a></li>
+                <li><a href="/recruit/_GI_List?Page=7" data-page="7">7</a></li>
+                <li><a href="/recruit/_GI_List?Page=8" data-page="8">8</a></li>
+                <li><a href="/recruit/_GI_List?Page=9" data-page="9">9</a></li>
+                <li><a href="/recruit/_GI_List?Page=10" data-page="10">10</a></li>
+
+            </ul>
+
+            <p><a href="/recruit/_GI_List?Page=11" class="tplBtn btnPgnNext" data-page="11">다음<i class="ico"></i></a>
+            </p>
+        </div>
+
+    </div>
+</div>
