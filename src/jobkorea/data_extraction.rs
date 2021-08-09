@@ -69,7 +69,7 @@ fn get_deadline(node: Node) -> String {
 
 fn get_link(node: Node) -> String {
     let link = node
-        .find(Class("tplCo"))
+        .find(Class("tplTit"))
         .next()
         .unwrap()
         .find(Name("a"))
