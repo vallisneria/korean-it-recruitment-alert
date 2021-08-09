@@ -1,4 +1,5 @@
 FROM rust:latest as builder
+LABEL org.opencontainers.image.source https://github.com/vallisneria/korean-it-recruitment-alert
 WORKDIR /build
 COPY . .
 RUN cargo build --release
