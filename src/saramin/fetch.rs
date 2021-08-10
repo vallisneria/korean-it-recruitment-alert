@@ -1,7 +1,7 @@
 use reqwest;
-use select::document::Document;
+use scraper::Html;
 
-pub async fn fetch(http_client: &reqwest::Client) -> Result<Document, Box<dyn std::error::Error>> {
+pub async fn fetch(http_client: &reqwest::Client) -> Result<Html, Box<dyn std::error::Error>> {
     // 웹개발전체, 응용프로그램개발전체, 시스템개발전체, 서버네트워크보안전체, 게임일부
     // 정규직, 병역특례, 인턴직
     const SARAMIN_URL: &str = concat!(
@@ -13,7 +13,7 @@ pub async fn fetch(http_client: &reqwest::Client) -> Result<Document, Box<dyn st
     );
 
     let response = http_client.get(SARAMIN_URL).send().await?.text().await?;
-    let document = Document::from_read(response.as_bytes())?;
+    let document = Html::parse_document(response.as_str());
 
     Ok(document)
 }

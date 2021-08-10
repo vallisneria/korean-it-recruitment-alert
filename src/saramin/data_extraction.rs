@@ -1,24 +1,22 @@
 use super::saramin::Saramin;
-use select::document::Document;
-use select::node::Node;
-use select::predicate::{Class, Name, Predicate};
+use scraper::{ElementRef, Html, Selector};
 
-pub fn data_extract(document: &Document) -> Vec<Saramin> {
+pub fn data_extract(document: &Html) -> Vec<Saramin> {
     let mut result: Vec<Saramin> = Vec::new();
-    let nodes = document.find(Class("common_recruilt_list").descendant(Class("list_item")));
+    let item_selector = Selector::parse(".common_recruilt_list .list_item").unwrap();
 
-    for node in nodes {
+    for element in document.select(&item_selector) {
         let data = Saramin::new(
-            get_id(node),
-            get_title(node),
-            get_company_name(node),
-            get_career(node),
-            get_education(node),
-            get_employment_type(node),
-            get_work_place(node),
-            get_salary(node),
-            get_deadline(node),
-            get_link(node),
+            get_id(element),
+            get_title(element),
+            get_company_name(element),
+            get_career(element),
+            get_education(element),
+            get_employment_type(element),
+            get_work_place(element),
+            get_salary(element),
+            get_deadline(element),
+            get_link(element),
         );
 
         result.push(data);
@@ -27,83 +25,100 @@ pub fn data_extract(document: &Document) -> Vec<Saramin> {
     result
 }
 
-fn get_id(node: Node) -> u32 {
-    node.find(Class("idx_chk"))
+fn get_id(element: ElementRef) -> u32 {
+    let selector = Selector::parse(".idx_chk").unwrap();
+    element
+        .select(&selector)
         .next()
         .unwrap()
+        .value()
         .attr("value")
         .unwrap()
         .parse()
         .unwrap()
 }
 
-fn get_company_name(node: Node) -> String {
-    node.find(Class("company_nm").descendant(Name("a")))
+fn get_company_name(element: ElementRef) -> String {
+    let selector = Selector::parse(".company_nm a").unwrap();
+    element
+        .select(&selector)
         .next()
         .unwrap()
+        .value()
         .attr("title")
         .unwrap()
         .parse()
         .unwrap()
 }
 
-fn get_title(node: Node) -> String {
-    node.find(Class("notification_info").descendant(Name("a")))
+fn get_title(element: ElementRef) -> String {
+    let selector = Selector::parse(".notification_info a").unwrap();
+    element
+        .select(&selector)
         .next()
         .unwrap()
+        .value()
         .attr("title")
         .unwrap()
         .parse()
         .unwrap()
 }
 
-fn get_career(node: Node) -> Option<String> {
-    match node.find(Class("career")).next() {
-        Some(item) => Some(item.text()),
+fn get_career(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".career").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().next().unwrap().parse().unwrap()),
         None => None,
     }
 }
 
-fn get_education(node: Node) -> Option<String> {
-    match node.find(Class("education")).next() {
-        Some(item) => Some(item.text()),
+fn get_education(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".education").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().next().unwrap().parse().unwrap()),
         None => None,
     }
 }
 
-fn get_employment_type(node: Node) -> Option<String> {
-    match node.find(Class("employment_type")).next() {
-        Some(item) => Some(item.text()),
+fn get_employment_type(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".employment_type").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().next().unwrap().parse().unwrap()),
         None => None,
     }
 }
 
-fn get_work_place(node: Node) -> Option<String> {
-    match node.find(Class("work_place")).next() {
-        Some(item) => Some(item.text()),
+fn get_work_place(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".work_place").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().next().unwrap().parse().unwrap()),
         None => None,
     }
 }
 
-fn get_salary(node: Node) -> Option<String> {
-    match node.find(Class("salary")).next() {
-        Some(item) => Some(item.text()),
+fn get_salary(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".salary").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().next().unwrap().parse().unwrap()),
         None => None,
     }
 }
 
-fn get_deadline(node: Node) -> Option<String> {
-    match node.find(Class("deadlines")).next() {
-        Some(item) => Some(item.find(Name("span").not()).next()?.text()),
+fn get_deadline(element: ElementRef) -> Option<String> {
+    let selector = Selector::parse(".deadlines").unwrap();
+    match element.select(&selector).next() {
+        Some(e) => Some(e.text().collect::<Vec<_>>()[0].parse().unwrap()),
         None => None,
     }
 }
 
-fn get_link(node: Node) -> String {
-    let path = node
-        .find(Class("notification_info").descendant(Name("a")))
+fn get_link(element: ElementRef) -> String {
+    let selector = Selector::parse(".notification_info a").unwrap();
+    let path = element
+        .select(&selector)
         .next()
         .unwrap()
+        .value()
         .attr("href")
         .unwrap();
 
@@ -113,12 +128,26 @@ fn get_link(node: Node) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[tokio::test]
+    async fn fetch_and_extract() {
+        use super::super::fetch::fetch;
+        use reqwest::Client;
+
+        let http_client = Client::new();
+        let doc = fetch(&http_client).await.unwrap();
+        let data = data_extract(&doc);
+
+        assert_ne!(data.len(), 0);
+    }
+
     #[test]
     fn data_extract_test() {
-        use select::document::Document;
+        use scraper::Html;
         let html = include_str!("saramin_job_list_for_test.html");
-        let doc = Document::from_read(html.as_bytes()).unwrap();
+        let doc = Html::parse_document(html);
+        let data = data_extract(&doc);
 
-        data_extract(&doc);
+        assert_ne!(data.len(), 0);
     }
 }
