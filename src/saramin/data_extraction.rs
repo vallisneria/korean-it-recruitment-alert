@@ -107,7 +107,7 @@ fn get_salary(element: ElementRef) -> Option<String> {
 fn get_deadline(element: ElementRef) -> Option<String> {
     let selector = Selector::parse(".deadlines").unwrap();
     match element.select(&selector).next() {
-        Some(e) => Some(e.text().next().unwrap_or("").parse().unwrap()),
+        Some(e) => Some(e.text().collect::<Vec<_>>()[0].parse().unwrap()),
         None => None,
     }
 }
