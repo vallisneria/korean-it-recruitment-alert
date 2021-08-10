@@ -1,8 +1,5 @@
 use super::jobkorea::JobKorea;
 use scraper::{ElementRef, Html, Selector};
-use select::document::Document;
-use select::node::Node;
-use select::predicate::{Class, Name, Predicate};
 
 pub fn data_extract(document: &Html) -> Vec<JobKorea> {
     let mut result: Vec<JobKorea> = Vec::new();

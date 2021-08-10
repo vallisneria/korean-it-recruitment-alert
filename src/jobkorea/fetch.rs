@@ -1,6 +1,5 @@
 use reqwest::Client;
 use scraper::Html;
-use select::document::Document;
 use std::error::Error;
 
 pub async fn fetch(http_client: &Client) -> Result<Html, Box<dyn Error>> {
