@@ -1,8 +1,9 @@
 use reqwest::Client;
+use scraper::Html;
 use select::document::Document;
 use std::error::Error;
 
-pub async fn fetch(http_client: &Client) -> Result<Document, Box<dyn Error>> {
+pub async fn fetch(http_client: &Client) -> Result<Html, Box<dyn Error>> {
     const URL: &str = "https://www.jobkorea.co.kr/Recruit/Home/_GI_List/";
     #[rustfmt::skip]
     let body = [
@@ -30,7 +31,7 @@ pub async fn fetch(http_client: &Client) -> Result<Document, Box<dyn Error>> {
         .send()
         .await?;
 
-    let document = Document::from_read(res.text().await?.as_bytes())?;
+    let document = Html::parse_document(res.text().await?.as_str());
     Ok(document)
 }
 
