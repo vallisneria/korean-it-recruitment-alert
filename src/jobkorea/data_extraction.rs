@@ -50,6 +50,7 @@ fn get_company_name(element: ElementRef) -> String {
         .text()
         .next()
         .unwrap()
+        .trim()
         .parse()
         .unwrap()
 }
@@ -63,6 +64,7 @@ fn get_title(element: ElementRef) -> String {
         .text()
         .next()
         .unwrap()
+        .trim()
         .parse()
         .unwrap()
 }
@@ -78,7 +80,7 @@ fn get_info(element: ElementRef) -> Vec<&str> {
 fn _reg_filter(reg: Regex, info: &Vec<&str>) -> Vec<String> {
     info.iter()
         .filter(|x| reg.is_match(x))
-        .map(|x| x.to_string())
+        .map(|x| x.trim().to_string())
         .collect::<Vec<String>>()
 }
 
