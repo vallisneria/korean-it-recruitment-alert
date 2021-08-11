@@ -67,7 +67,6 @@ impl MastodonUpload for JobKorea {
         let none = String::from("-");
         format!(
             r"🏢 {company_name}
-
 ⌛ {career}
 🏫 {education}
 💼 {employment_type}

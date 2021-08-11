@@ -42,7 +42,6 @@ impl MastodonUpload for Saramin {
 
         format!(
             r"🏢 {company_name}
-
 ⌛ {career}
 🏫 {education}
 💼 {employment_type}
