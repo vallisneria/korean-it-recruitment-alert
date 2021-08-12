@@ -1,5 +1,3 @@
-use tokio::time::{sleep, Duration};
-
 pub struct Mastodon {
     instance_url: String,
     bearer_token: String,
