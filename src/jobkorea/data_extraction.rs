@@ -127,7 +127,7 @@ fn get_employment_type(info: &Vec<&str>) -> Option<String> {
 }
 
 fn get_salary(info: &Vec<&str>) -> Option<String> {
-    let salary_reg = Regex::new(r"[0-9,~]+만?원.*").unwrap();
+    let salary_reg = Regex::new(r"^[0-9,~]+만?원.*").unwrap();
     let filter = _reg_filter(salary_reg, info);
 
     match filter.len() {
