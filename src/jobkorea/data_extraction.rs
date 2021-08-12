@@ -127,7 +127,7 @@ fn get_employment_type(info: &Vec<&str>) -> Option<String> {
 }
 
 fn get_salary(info: &Vec<&str>) -> Option<String> {
-    let salary_reg = Regex::new(r"[0-9,~]+.*").unwrap();
+    let salary_reg = Regex::new(r"[0-9,~]+만?원.*").unwrap();
     let filter = _reg_filter(salary_reg, info);
 
     match filter.len() {
@@ -195,5 +195,20 @@ mod tests {
         let data = data_extract(&doc);
 
         assert_ne!(data.len(), 0);
+    }
+
+    #[test]
+    fn amp() {
+        let html = r#"
+        <!DOCTYPE HTML>
+        <body>
+            <p>&amp;</p>
+        </body>
+        "#;
+        let doc = Html::parse_document(html);
+        let sel = Selector::parse("p").unwrap();
+
+        let amp: &str = doc.select(&sel).next().unwrap().text().next().unwrap();
+        assert_eq!(amp, "&");
     }
 }
